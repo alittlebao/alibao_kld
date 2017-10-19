@@ -56,5 +56,10 @@ $ git fetch [remote-name]
 $ git remote show [remote-name]
 远程仓库的移除与重命名
 $ git remote rename origin Eric
-$ git remote rm Eric
+$ git remote rm Eric
+
+$ git remote add origin (刚才复制的远程库的SSH)
+
+强制push：
+$ git push -u origin master -f
 
