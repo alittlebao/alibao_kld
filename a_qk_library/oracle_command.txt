@@ -1,0 +1,34 @@
+查询当前用户
+select user from dual
+解锁scott用户
+alter user scott account unlock; 
+修改scott密码
+alter user scott identified by tiger; 
+上锁scott用户
+alter user scott account lock; 
+赋予用户所有权限（test为用户名）
+grant all privileges to test;
+删除用户（test为用户名，后面必须跟cascade）
+drop user test cascade 
+
+
+删除系统所有表
+select 'drop table "'||table_name||'";' from cat where table_type='TABLE'
+清空回收对象
+purge recyclebin
+
+
+导入dmp文件（注意这里要先退出sqlplus）
+imp 数据库用户名/密码@数据库名称 file=文件路径加文件名 full=y ignore=y;
+imp bpm/Sys123456@127.0.0.1:1521/bpm file=dmp文件路径加文件名full=y ignore=y;
+
+
+sqlplus / as sysdba;
+STARTUP NOMOUNT (读初始化参数文件，启动实例)
+STARTUP MOUNT (打开控制文件) 
+STARTUP OPEN (打开数据文件，日志文件)
+STARTUP FORCE (首先异常关闭数据库，然后重新启动)
+STARTUP RESTRICT (启动数据库并把它置入OPEN模式，但只给拥有RESTRICTED SESSION权限的用户赋予访问权)
+
+
+

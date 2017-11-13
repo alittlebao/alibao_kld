@@ -1,0 +1,2 @@
+PL/SQL 高效修改、插入、删除
+select a.*, a.rowid from table_name a;
