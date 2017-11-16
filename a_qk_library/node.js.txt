@@ -1,0 +1,4 @@
+#进入编辑模式
+node
+#退出编辑模式
+ctrl+D  或  .exit  或 ctrl+C两次

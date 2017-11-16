@@ -24,11 +24,22 @@ imp bpm/Sys123456@127.0.0.1:1521/bpm file=dmp文件路径加文件名full=y ignore=y;
 
 
 sqlplus / as sysdba;
+关闭数据库
+shutdown immediate；
+打开数据库
 STARTUP NOMOUNT (读初始化参数文件，启动实例)
 STARTUP MOUNT (打开控制文件) 
 STARTUP OPEN (打开数据文件，日志文件)
 STARTUP FORCE (首先异常关闭数据库，然后重新启动)
 STARTUP RESTRICT (启动数据库并把它置入OPEN模式，但只给拥有RESTRICTED SESSION权限的用户赋予访问权)
+
+
+查看oracle数据库的编码
+select * from nls_database_parameters where parameter ='NLS_CHARACTERSET';
+查看oracle客户端编码
+select * from nls_instance_parameters where parameter='NLS_LANGUAGE';
+
+
 
 
 
