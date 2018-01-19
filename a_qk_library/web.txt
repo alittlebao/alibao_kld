@@ -1,0 +1,2 @@
+»ñÈ¡ä¯ÀÀÆ÷µÄuserAgent
+BeanCtx.getRequest().getHeader("user-agent")

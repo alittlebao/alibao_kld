@@ -1,0 +1,2 @@
+#SQL Server数据库表复制
+select * into BPM_DevDefaultCode_20180110_bak from BPM_DevDefaultCode;

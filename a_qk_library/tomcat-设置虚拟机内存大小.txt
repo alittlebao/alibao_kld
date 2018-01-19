@@ -1,0 +1,19 @@
+在Windows下，在$TOMCAT_HOME/bin/catalina.bat，Linux下，在$TOMCAT_HOME/bin/catalina.sh 
+
+的前面，增加如下设置：
+
+JAVA_OPTS=”-Xms [min heap size]-Xmx[max heap size]”
+
+例如：
+
+JAVA_OPTS="-Xms1024m -Xmx1024m -XX:PermSize=128m -XX:MaxPermSize=256m"
+
+
+-Xms：初始堆大小
+-Xmx：最大堆大小
+-Xmn：最小值
+PermSize 永久保存区域初始大小
+MaxPermSize 永久保存区域初始最大值
+
+
+

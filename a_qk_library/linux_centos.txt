@@ -1,0 +1,4 @@
+#¹Ø»ú
+shutdown -h now
+#ÖØÆô
+reboot

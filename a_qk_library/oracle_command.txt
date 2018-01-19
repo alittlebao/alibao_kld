@@ -14,6 +14,8 @@ drop user test cascade
 
 删除系统所有表
 select 'drop table "'||table_name||'";' from cat where table_type='TABLE'
+删除所有视图
+select 'drop view "'||table_name||'";' from cat where table_type='VIEW';
 清空回收对象
 purge recyclebin
 
