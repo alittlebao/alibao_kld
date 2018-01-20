@@ -1,3 +1,6 @@
 #数据库备份
 #cmd备份 bpm为数据库名，后面空格跟表名(不跟为全部)，多个数据或表，用空格隔开
-mysqldump -u root -p bpm >E:\alibao_kld\linkey\BPM系统版本控制\9.5(SVG)\bpmsvg(MYSQL).sql
+mysqldump -u root -p bpm >E:\backup.sql
+
+#数据还原
+mysql -u root -p < E:\backup.sql

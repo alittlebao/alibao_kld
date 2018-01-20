@@ -1,0 +1,5 @@
+#备份数据库
+osql -E -S localhost 
+BACKUP DATABASE LKBPM TO DISK = 'E:\alibao_kld\linkey\BPM系统版本控制\9.5(SVG)\bpmsvg(MSSQL).bak' WITH INIT   
+go
+

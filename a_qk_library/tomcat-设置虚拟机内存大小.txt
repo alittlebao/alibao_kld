@@ -17,3 +17,9 @@ MaxPermSize 永久保存区域初始最大值
 
 
 
+
+#打包成war文件
+jar -cvf myweb.war .
+
+
+
