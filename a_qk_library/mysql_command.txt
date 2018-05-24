@@ -1,6 +1,30 @@
 #数据库备份
-#cmd备份 bpm为数据库名，后面空格跟表名(不跟为全部)，多个数据或表，用空格隔开
-mysqldump -u root -p bpm >E:\backup.sql
+#cmd备份 bpm为数据库名，后面空格跟表名(不跟为全部)，多个数据或表，用空格隔开  --default-character-set=utf8
+ mysqldump -u root -p bpm >E:\backup.sql
 
 #数据还原
-mysql -u root -p < E:\backup.sql
+#创建数据库bpmvml_dev
+ CREATE DATABASE bpmvml_dev DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
+#还原数据库
+ mysql -u root -p bpmvml_dev < E:\backup.sql
+
+#======================================================================================
+
+#mysql 5.7修改默认字符集
+#在安装目录C:\Program Files\MySQL\MySQL Server 5.7 复制my-default.ini重命名为my.ini文件
+#在my.in中添加
+
+[client] 
+#20180305 客户端添加默认字符
+default-character-set = utf8
+[mysqld]
+#20180305 服务器端添加默认字符
+default-storage-engine=INNODB
+character-set-server=utf8
+collation-server=utf8_general_ci
+
+
+#表结构操作 DDL语句
+#=====================================================================================
+#修改bpm_formlist表DataSourceid字段默认值
+ alter table bpm_formlist alter column DataSourceid set default 'default';

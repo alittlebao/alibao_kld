@@ -1,0 +1,2 @@
+打包war包  -c  创建新档案   -v  在标准输出中生成详细输出   -f  指定档案文件名
+G:\Linkey\产品\BPM系统版本控制\BPM_9.0(VML)\bpmvml>  jar -cvf bpmvml.war ./*

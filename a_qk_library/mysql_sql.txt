@@ -1,0 +1,6 @@
+#查询某个数据库里所有的用户表
+ SELECT  table_name FROM  information_schema.tables WHERE  table_schema = '数据库名'
+
+
+#插入或者更新
+ INSERT INTO TABLE (a,c) VALUES (1,3),(1,7) ON DUPLICATE KEY UPDATE c=VALUES(c);

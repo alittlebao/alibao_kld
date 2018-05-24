@@ -1,2 +1,23 @@
 #SQL Server数据库表复制
-select * into BPM_DevDefaultCode_20180110_bak from BPM_DevDefaultCode;
+ select * into BPM_DevDefaultCode_20180110_bak from BPM_DevDefaultCode;
+
+#查询某个数据库里所有的用户表
+ SELECT TABLE_NAME FROM  information_schema.tables where table_type = 'BASE TABLE'order by  table_name
+
+#带条件查询语句
+ select case   
+ when oi.order_type_id='SALE' then '销售'  
+ when oi.order_type_id='PURCHASE' then '采购'  
+ end as 订单类型 
+ from order_info as oi; 
+
+#插入或者更新
+ BEGIN TRANSACTION
+IF EXISTS ( SELECT CODETYPE FROM BPM_DEVDEFAULTCODE WHERE CODETYPE = 'ProcessModMonitorCenterSvg' )
+    UPDATE  BPM_DEVDEFAULTCODE
+    SET  DEFAULTCODE = ''
+    WHERE CODETYPE='ProcessModMonitorCenterSvg'
+ELSE
+    INSERT INTO BPM_DEVDEFAULTCODE(WF_ORUNID, WF_APPID, COUNTRY, CODETYPE, DEFAULTCODE, CODENO, REMARK, WF_NOUPDATE, WF_VERSION, WF_DOCCREATED, WF_LASTMODIFIED, WF_ADDNAME, WF_ADDNAME_CN) 
+    VALUES ('5f4c581a0618e04a000abd303ca5c949ce1c', 'S001', 'CN', 'ProcessModMonitorCenterSvg', '', '2', '流程监控 svg', '0', '11.0', '2018-05-14 16:56:04', '2018-05-14 16:56:18', 'admin', 'admin');
+COMMIT

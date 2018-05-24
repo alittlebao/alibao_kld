@@ -1,0 +1,3 @@
+运行regedit打开系统注册列表
+HKEY_CURRENT_USER\Software\Microsoft\Office\15.0\Word\Options
+修改UndoHistory的值,在10到100中随机填一个

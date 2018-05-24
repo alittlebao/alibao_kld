@@ -1,5 +1,40 @@
-#备份数据库
+--备份数据库
 osql -E -S localhost 
 BACKUP DATABASE LKBPM TO DISK = 'E:\alibao_kld\linkey\BPM系统版本控制\9.5(SVG)\bpmsvg(MSSQL).bak' WITH INIT   
 go
 
+--还原备份数据库，还原不成功使用下一种方法
+RESTORE DATABASE LKBPM FROM DISK='d:\AbpFirst.bak'
+
+--使用with replace、move to还原
+restore database shenlianli from disk='e:\cj' with replace,  
+move 'iscp2_Data' to 'e:\Program Files\Microsoft SQL Server\MSSQL\data\shenlianli_Data.MDF',  
+move 'iscp2_Log' to 'e:\Program Files\Microsoft SQL Server\MSSQL\data\shenlianli_Log.ldf'
+
+RESTORE DATABASE NewWay FROM DISK='G:\Linkey\项目\高速传媒\NewRoadRMS_backup_2017_10_25_1351.bak' WITH REPLACE,
+move 'Linkey_ADNewWay_01' to 'D:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER2016\MSSQL\DATA\NewWay_01.MDF',  
+move 'Linkey_ADNewWay_01_log' to 'D:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER2016\MSSQL\DATA\NewWay_01_log.ldf'
+
+
+--创建数据库
+--===============================================================
+--查找命令
+if exists(select * from sysobjects where name ='LKBPM_mobile')
+--删除 命令
+drop DATABASE ConstructionDB
+--创建LKBPM_mobile数据表，数据文件为LKBPM_mobile_date.mdf，日志文件为LKBPM_mobile_log.ldf。
+Create database  LKBPM_mobile
+on(
+name='LKBPM_mobile_date',
+filename='D:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER2016\MSSQL\DATA\LKBPM_mobile_date.mdf',
+size=3mb,
+maxsize=10mb,
+filegrowth=5%
+)
+log on(
+name='LKBPM_mobile_log',
+filename='D:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER2016\MSSQL\DATA\LKBPM_mobile_log.ldf',
+size=2mb,
+maxsize=5mb,
+filegrowth=1mb
+)

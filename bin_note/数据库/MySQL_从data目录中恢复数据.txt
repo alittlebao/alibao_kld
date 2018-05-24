@@ -1,0 +1,8 @@
+所有数据库的所有表数据索引、数据记录都全部存储在ibdata1文件中；
+ib_logfile0和ib_logfile1是日志文件。
+
+复制I:\ProgramData\MySQL\MySQL Server 5.7\Data文件夹中的
+数据库创建表文件(data文件夹下对于数据库目录)
+ibdata1
+ib_logfile0
+ib_logfile1

@@ -1,45 +1,82 @@
-查询当前用户
-select user from dual
-解锁scott用户
-alter user scott account unlock; 
-修改scott密码
-alter user scott identified by tiger; 
-上锁scott用户
-alter user scott account lock; 
-赋予用户所有权限（test为用户名）
-grant all privileges to test;
-删除用户（test为用户名，后面必须跟cascade）
-drop user test cascade 
+#查询当前用户
+ select user from dual
+#解锁scott用户
+ alter user scott account unlock; 
+#修改scott密码为tiger
+ alter user scott identified by tiger; 
+#上锁scott用户
+ alter user scott account lock; 
+#赋予用户所有权限（test为用户名）
+ grant all privileges to test;
+#查询所有用户
+ select username from dba_users;
+
+===============================================================================
+#删除用户（test为用户名，后面必须跟cascade）
+ drop user test cascade 
+#删除表空间bpmsvg 
+ drop tablespace bpmsvg including contents and datafiles cascade constraint;
+#删除临时表空间(彻底删除)： 
+ drop tablespace bpmsvg_temp including contents and datafiles cascade constraints;
 
 
-删除系统所有表
-select 'drop table "'||table_name||'";' from cat where table_type='TABLE'
-删除所有视图
-select 'drop view "'||table_name||'";' from cat where table_type='VIEW';
-清空回收对象
-purge recyclebin
+#删除系统所有表
+ select 'drop table "'||table_name||'";' from cat where table_type='TABLE'
+#删除所有视图
+ select 'drop view "'||table_name||'";' from cat where table_type='VIEW';                               materialized
+#清空回收对象
+ purge recyclebin
 
 
-导入dmp文件（注意这里要先退出sqlplus）
-imp 数据库用户名/密码@数据库名称 file=文件路径加文件名 full=y ignore=y;
-imp bpm/Sys123456@127.0.0.1:1521/bpm file=dmp文件路径加文件名full=y ignore=y;
+#将数据库TEST完全导出,用户名system 密码manager 导出到D:\daochu.dmp中
+  exp BPMVML/1234@ALIBAO file=d:\daochu.dmp full=y
+#将数据库中system用户与sys用户的表导出
+  exp system/manager@TEST file=d:\daochu.dmp owner=(system,sys)
+#将数据库中的表table1 、table2导出
+  exp system/manager@TEST file=d:\daochu.dmp tables=(table1,table2)
+#将数据库中的表table1中的字段filed1以"00"打头的数据导出
+  exp system/manager@TEST file=d:\daochu.dmp tables=(table1)query=\" where filed1 like '00%'\"
+
+#导入dmp文件（注意这里要先退出sqlplus）
+#imp 数据库用户名/密码@数据库名称 file=文件路径加文件名 full=y ignore=y;
+ imp bpm/Sys123456@127.0.0.1:1521/bpm file=dmp文件路径加文件名full=y ignore=y;
+#将d:\daochu.dmp中的表table1 导入
+ imp system/manager@TEST file=d:\daochu.dmp tables=(table1)
 
 
-sqlplus / as sysdba;
-关闭数据库
-shutdown immediate；
-打开数据库
-STARTUP NOMOUNT (读初始化参数文件，启动实例)
-STARTUP MOUNT (打开控制文件) 
-STARTUP OPEN (打开数据文件，日志文件)
-STARTUP FORCE (首先异常关闭数据库，然后重新启动)
-STARTUP RESTRICT (启动数据库并把它置入OPEN模式，但只给拥有RESTRICTED SESSION权限的用户赋予访问权)
+ sqlplus / as sysdba;
+#关闭数据库
+ shutdown immediate；
+#打开数据库
+ STARTUP NOMOUNT (读初始化参数文件，启动实例)
+ STARTUP MOUNT (打开控制文件) 
+ STARTUP OPEN (打开数据文件，日志文件)
+ STARTUP FORCE (首先异常关闭数据库，然后重新启动)
+ STARTUP RESTRICT (启动数据库并把它置入OPEN模式，但只给拥有RESTRICTED SESSION权限的用户赋予访问权)
 
 
-查看oracle数据库的编码
-select * from nls_database_parameters where parameter ='NLS_CHARACTERSET';
-查看oracle客户端编码
-select * from nls_instance_parameters where parameter='NLS_LANGUAGE';
+#查看oracle数据库的编码
+ select * from nls_database_parameters where parameter ='NLS_CHARACTERSET';
+#查看oracle客户端编码
+ select * from nls_instance_parameters where parameter='NLS_LANGUAGE';
+
+#查询数据库名(show parameter db_name)
+ select name,dbid from v$database;
+#查询数据库实例名(show parameter instance_name)
+ select instance_name from v$instance;
+
+#查询表空间大小
+ select tablespace_name, sum(bytes) / 1024 / 1024 from dba_data_files group by tablespace_name;
+#更改表空间数据文件大小
+ alter database datafile '/ora/oradata/radius/testNS.dbf' resize 10240m;
+
+
+https://localhost:5500/em
+
+
+临时表空间的相关操作：
+https://blog.csdn.net/vic_qxz/article/details/52687153
+
 
 
 

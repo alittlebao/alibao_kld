@@ -1,2 +1,26 @@
-PL/SQL 高效修改、插入、删除
-select a.*, a.rowid from table_name a;
+--dual表一行转多行
+select regexp_substr('444.555.666', '[^.]+', 1, level) col
+  from dual
+connect by level <= regexp_count('444.555.666', '\.') + 1
+
+
+--查询BPM_TABLECONFIG表里的clob类型字段fieldconfig，英文用4000，中文用2000
+  select * from BPM_TABLECONFIG where to_char(SUBSTR(fieldconfig,1,2000)) = '{"total":0,"rows":[]}' or to_char(SUBSTR(fieldconfig,1,2000)) is null;
+--交集
+  SELECT Txn_Date FROM Store_Information 
+  INTERSECT
+  SELECT Txn_Date FROM Internet_Sales;
+
+
+
+--PL/SQL 高效修改、插入、删除
+  select a.*, a.rowid from table_name a;
+
+
+--修改字段长度
+  alter table BPM_MailBox modify Userid varchar2(500) 
+  alter table 表名 modify (column_name1 varchar(20) default null,column_name2 varchar2(30));
+
+--判断clob字段不为空，假设字段名为XMLDATA
+  WHERE XMLDATA IS NOT NULL AND DBMS_LOB.GETLENGTH(XMLDATA) <> 0 
+

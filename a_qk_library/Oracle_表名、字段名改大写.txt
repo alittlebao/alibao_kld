@@ -1,0 +1,76 @@
+#批量将表名变为大写
+begin  
+   for c in (select table_name tn from user_tables where table_name <> upper(table_name)) loop  
+       begin  
+          execute immediate 'alter table "'||c.tn||'" rename to '||c.tn;  
+       exception  
+          when others then  
+             dbms_output.put_line(c.tn||'已存在');  
+       end;  
+   end loop;   
+end;  
+
+
+
+#批量将空间内所有表的所有字段名变成大写
+begin  
+  for t in (select table_name tn from user_tables) loop  
+      begin  
+         for c in (select column_name cn from user_tab_columns where table_name=t.tn) loop  
+             begin  
+                execute immediate 'alter table "'||t.tn||'" rename column "'||c.cn||'" to '||c.cn;  
+             exception  
+                when others then  
+                   dbms_output.put_line(t.tn||'.'||c.cn||'已经存在');  
+             end;  
+         end loop;  
+      end;  
+  end loop;   
+end; 
+
+
+#将用户空间的所有表名及所有字段变为大写 
+begin  
+   for t in (select table_name tn from user_tables where table_name <> upper(table_name)) loop  
+       begin  
+          for c in (select column_name cn from user_tab_columns where table_name=t.tn) loop  
+              begin  
+                 execute immediate 'alter table "'||t.tn||'" rename column "'||c.cn||'" to '||c.cn;  
+              exception  
+                 when others then  
+                    dbms_output.put_line(t.tn||'.'||c.cn||'已经存在');  
+              end;  
+          end loop;  
+        
+          execute immediate 'alter table "'||t.tn||'" rename to '||t.tn;  
+          exception  
+             when others then  
+                dbms_output.put_line(t.tn||'已存在');  
+       end;  
+   end loop;   
+end;  
+
+
+#批量修改表字段名字
+DECLARE  
+    -- 声明常量  
+    TEST1 CONSTANT CHAR(8) := 'XMLDATA_';
+  TEST2 CONSTANT CHAR(8) := 'XMLDATA'; 
+begin  
+  for t in (select table_name tn from user_tables) loop  
+      begin  
+         for c in (select column_name cn from user_tab_columns where table_name=t.tn) loop  
+             begin
+        IF c.cn=TEST1 THEN
+          execute immediate 'alter table "'||t.tn||'" rename column "'||c.cn||'" to '||TEST2;
+          dbms_output.put_line('已修改为：'||t.tn||'.'||c.cn);
+        END IF;  
+             exception  
+                when others then  
+                   dbms_output.put_line(t.tn||'.'||c.cn||'已经存在');  
+             end;  
+         end loop;  
+      end;  
+  end loop;   
+end; 
+

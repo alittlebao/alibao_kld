@@ -1,0 +1,2 @@
+#查看alibao监听是否启动
+ tnsping alibao

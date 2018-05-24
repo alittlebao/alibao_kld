@@ -73,3 +73,7 @@ git reset –hard ：彻底回退到某个版本，本地的源码也会变为上一个版本的内容。
 ~$git commit -m "Initial commit"
 ~$git push -u origin master
 
+
+#下载Git 项目 -b 表示下载分支
+$ git clone -b SVG维护版本 git@gitee.com:Eric-Green/LinkeyBPM.git
+
