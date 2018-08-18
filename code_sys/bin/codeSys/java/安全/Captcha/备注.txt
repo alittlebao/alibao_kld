@@ -1,0 +1,5 @@
+多种验证码的java实现：
+原生态jsp和servlet生成验证码、
+Kaptcha组件生成验证码、
+ChineseText中文验证码、
+CalculateCaptcha算术验证码。

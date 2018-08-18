@@ -4,6 +4,10 @@ select regexp_substr('444.555.666', '[^.]+', 1, level) col
 connect by level <= regexp_count('444.555.666', '\.') + 1
 
 
+--字符串查找、截取 (查找最后出现".",截"."及后面的字符)
+select substr('1234567.89',instr('1234567.89','.',-1)) from dual
+
+
 --查询BPM_TABLECONFIG表里的clob类型字段fieldconfig，英文用4000，中文用2000
   select * from BPM_TABLECONFIG where to_char(SUBSTR(fieldconfig,1,2000)) = '{"total":0,"rows":[]}' or to_char(SUBSTR(fieldconfig,1,2000)) is null;
 --交集

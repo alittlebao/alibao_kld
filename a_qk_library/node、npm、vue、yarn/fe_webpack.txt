@@ -1,0 +1,28 @@
+# webpack 安装及使用
+
+
+1、检测npm： 
+npm -v
+
+2、使用npm安装webpack，并安装到全局：
+npm install webpack -g
+
+3、查看当前webpack版本号：
+webpack -v
+
+4、生成package.json文件：
+npm init
+package.json配置文件中不能写中文，注释也不行，否则会有错误。package.json的name参数是按照文件夹名字自动生成，当然也可以自己修改，但是不能为webpack。
+
+
+5、为项目添加webpack依赖
+npm install webpack --save-dev
+
+6、将你的js文件编译并打包 (这里的hello.js、hello.bundle.js分别是你要打包的js文件名和打包后的文件名)
+webpack hello.js hello.bundle.js
+
+7、安装css的loader转换器和style的loader转换器
+npm install css-loader style-loader --save-dev
+
+8、当文件有变化时，就会自动编译
+webpack hello.js hello.bundle.js  --watch

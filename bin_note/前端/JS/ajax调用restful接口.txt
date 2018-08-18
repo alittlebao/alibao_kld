@@ -1,0 +1,22 @@
+//ajax传送json格式数据，关键是指定contentType，data要是json格式
+
+//如果是restful接口，把type改成对应的post（增）、delete（删）、put（改）、get（查）即可
+
+
+var post_data={"name":"test001","pass":"xxxx"};
+$.ajax({
+	url: "http://192.168.10.111:8080/uc/login",
+	type: 'post',
+	contentType: "application/json; charset=utf-8",
+	data:JSON.stringify(post_data),
+	success:function (data) {
+		//调用成功
+	},
+	error: function(data, textStatus, errorThrown){
+		//调用失败
+	}
+});
+
+
+//使用java后端
+//https://blog.csdn.net/kingice1014/article/details/77883441

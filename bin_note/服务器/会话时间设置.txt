@@ -1,0 +1,15 @@
+setMaxInactiveInterval和session-config比较
+
+setMaxInactiveInterval和session-config的优先级： 
+1、setMaxInactiveInterval的优先级高，如果setMaxInactiveInterval没有设置，则默认是session-config中设置的时间。 
+2、setMaxInactiveInterval设置的是当前会话的失效时间，不是整个web服务的。 
+3、setMaxInactiveInterval的参数是秒，session-config当中配置的session-timeout是分钟。
+
+session-timeout元素（WEB.XML文件中的元素）用来指定默认的会话超时时间间隔，以分钟为单位。该元素值必须为整数。如果session-timeout元素的值为零或负数，
+则表示会话将永远不会超时。如：
+<session-config> 
+      <session-timeout>30</session-timeout> 
+</session-config> //30分钟
+ 
+setMaxInactiveInterval设置的是当前会话的失效时间，不是整个web的时间，单位为以秒计算。如果设置的值为零或负数，则表示会话将永远不会超时。
+常用于设置当前会话时间。

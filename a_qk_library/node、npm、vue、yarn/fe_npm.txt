@@ -1,3 +1,5 @@
+【重要】 更换淘宝镜像后，需要把所有npm 改成cnpm
+
 #查看版本
 npm -v
 #更新最新的npm
@@ -27,6 +29,7 @@ npm config set cache "J:\Program Files\nodejs\node_cache"
 1、临时使用
 npm --registry https://registry.npm.taobao.org install express
 2、持久使用
-npm config set registry https://registry.npm.taobao.org
+## npm config set registry https://registry.npm.taobao.org
+npm install cnpm -g --registry=https://registry.npm.taobao.org
 # 配置后可通过下面方式来验证是否成功
 npm config get registry    
