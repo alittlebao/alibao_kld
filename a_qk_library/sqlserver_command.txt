@@ -38,3 +38,8 @@ size=2mb,
 maxsize=5mb,
 filegrowth=1mb
 )
+
+
+--新增一个字段，加备注
+
+

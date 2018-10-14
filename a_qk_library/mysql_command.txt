@@ -28,3 +28,8 @@ collation-server=utf8_general_ci
 #=====================================================================================
 #修改bpm_formlist表DataSourceid字段默认值
  alter table bpm_formlist alter column DataSourceid set default 'default';
+
+
+#修改Root用户密码
+ set password for root@localhost = password('1234'); 
+ 

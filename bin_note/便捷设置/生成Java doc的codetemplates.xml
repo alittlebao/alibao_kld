@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="false" context="fieldcomment_context" deleted="false" description="Comment for fields" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.fieldcomment" name="fieldcomment">// @Fields ${field} : ${todo}</template><template autoinsert="true" context="settercomment_context" deleted="false" description="Comment for setter method" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.settercomment" name="settercomment">/**
+ * @param ${param} the ${bare_field_name} to set
+ */</template><template autoinsert="false" context="filecomment_context" deleted="false" description="Comment for created Java files" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.filecomment" name="filecomment">/**   
+ * Copyright © ${year} A Little Bao. All rights reserved.
+ * 
+ * 功能描述：
+ * @Package: ${package_name} 
+ * @author: ${user}   
+ * @date: ${date} ${time} 
+ */
+</template><template autoinsert="false" context="overridecomment_context" deleted="false" description="Comment for overriding methods" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.overridecomment" name="overridecomment">/** &#13;
+ * ${see_to_overridden}  &#13;
+ * 该函数的功能描述&#13;
+ *&#13;
+ * @param:描述1描述&#13;
+ * @return：返回结果描述&#13;
+ */&#13;
+</template><template autoinsert="true" context="delegatecomment_context" deleted="false" description="Comment for delegate methods" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.delegatecomment" name="delegatecomment">/**
+ * ${tags}
+ * ${see_to_target}
+ */</template><template autoinsert="false" context="typecomment_context" deleted="false" description="Comment for created types" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.typecomment" name="typecomment">/**   
+ * 该类的功能描述
+ *
+ * @author: ${user}
+ *
+ * Modification History:
+ * Date         Author          Version            Description
+ *---------------------------------------------------------*
+ * ${date}     ${user}           v1.0.0               修改原因
+ */
+</template><template autoinsert="false" context="methodcomment_context" deleted="false" description="Comment for non-overriding methods" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.methodcomment" name="methodcomment">/**   
+ * @Description: 该函数的功能描述
+ *
+ * @param:描述1描述
+ * @return：返回结果描述
+ * @author: ${user}
+ * @date: ${date} ${time} 
+ */
+</template><template autoinsert="true" context="gettercomment_context" deleted="false" description="Comment for getter method" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.gettercomment" name="gettercomment">/**
+ * @return the ${bare_field_name}
+ */</template><template autoinsert="false" context="constructorcomment_context" deleted="false" description="Comment for created constructors" enabled="true" id="org.eclipse.jdt.ui.text.codetemplates.constructorcomment" name="constructorcomment">/**   
+ * @Function: ${file_name}
+ * @Description: 该函数的功能描述
+ *
+ * @param:参数描述
+ * @author: ${user}
+ * @date: ${date} ${time} 
+ */
+</template></templates>

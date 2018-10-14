@@ -27,6 +27,14 @@
 #清空回收对象
  purge recyclebin
 
+#查询BPM_ISSUE用户下使用的所有表空间
+ select distinct(tablespace_name) from dba_segments where owner='BPM_ISSUE';
+#查询某个表空间（BPMSVG）下，某个用户(BPM_ISSUE)的表
+ select *  from dba_segments where owner='BPM_ISSUE' and tablespace_name='BPMSVG'
+#回收某个表空间中某个用户的表
+ purge tablespace BPMSVG user BPM_ISSUE;
+#
+
 
 #将数据库TEST完全导出,用户名system 密码manager 导出到D:\daochu.dmp中
   exp BPMVML/1234@ALIBAO file=d:\daochu.dmp full=y

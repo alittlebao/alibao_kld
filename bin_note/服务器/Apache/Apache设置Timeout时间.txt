@@ -1,0 +1,8 @@
+Apache设置Timeout时间
+
+#在httpd.conf 找到以下语句，取消注释
+ Include conf/extra/httpd-default.conf
+
+#在extra/httpd-default.conf添加timeout设置
+#修改Timeout 60为
+ Timeout 300
