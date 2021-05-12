@@ -1,3 +1,5 @@
+#登录
+sqlplus sys/1234 as sysdba 
 #查询当前用户
  select user from dual
 #解锁scott用户
@@ -33,7 +35,10 @@
  select *  from dba_segments where owner='BPM_ISSUE' and tablespace_name='BPMSVG'
 #回收某个表空间中某个用户的表
  purge tablespace BPMSVG user BPM_ISSUE;
-#
+#删除BPM_ISSUE用户处理表空间权力
+ revoke unlimited tablespace from BPM_ISSUE;
+#赋予BPM_ISSUE 用户操作BPM_ISSUE表空间的权力
+ alter user BPM_ISSUE quota unlimited on BPM_ISSUE;
 
 
 #将数据库TEST完全导出,用户名system 密码manager 导出到D:\daochu.dmp中
@@ -86,6 +91,46 @@ https://localhost:5500/em
 https://blog.csdn.net/vic_qxz/article/details/52687153
 
 
+性能监控
+================================================================================
+--连接数情况
+select (select count(*) from v$process) as 当前连接数,(select count(*) from v$session where status='ACTIVE') as 当前并发连接数,(select value from v$parameter where name = 'processes') as 允许的最大连接数 from dual
+
+--会话情况
+select sid,serial#,username,program,machine,status from v$session;  
+
+--当前会话和历史最高会话数
+select sessions_current,sessions_highwater from v$license;
+
+--查询哪些应用使用了连接
+select b.MACHINE, b.PROGRAM , count(*) from v$process a, v$session b where a.ADDR = b.PADDR and b.USERNAME is not null group by b.MACHINE , b.PROGRAM order by count(*) desc; 
+
+--查询是否有死锁
+select * from v$locked_object;  
+
+--查看被锁的表
+select b.owner,b.object_name,a.session_id,a.locked_mode from v$locked_object a,dba_objects b where b.object_id = a.object_id;
+
+--查看那个用户那个进程照成死锁
+select b.username,b.sid,b.serial#,logon_time from v$locked_object a,v$session b where a.session_id = b.sid order by b.logon_time;
+
+
+ORACLE查询当前执行效率低的sql
+--CPU高的SQL
+select sql_text from v$sql order by cpu_time desc
+--逻辑读多的SQL：
+select * from (select buffer_gets, sql_text
+from v$sqlarea
+where buffer_gets > 500000
+order by buffer_gets desc) where rownum<=30;
+--执行次数多的SQL ：
+select sql_text,executions from
+(select sql_text,executions from v$sqlarea order by executions desc)
+where rownum<81;
+--读硬盘多的SQL ：
+select sql_text,disk_reads from
+(select sql_text,disk_reads from v$sqlarea order by disk_reads desc)
+where rownum<21; 
 
 
 

@@ -1,0 +1,68 @@
+12:47:16:739,0x000000CE =============================================
+12:47:16:739,0x000000CE Log at: 2020-03-31 12:47:16:739, compiled: Feb 28 2018 11:49:23
+12:47:16:739,0x000000CE PID: 0205, Exe: c:\Program Files\AliWorkbench\AliWorkbench.exe
+12:47:16:739,0x000000CE Init Log
+12:47:16:743,0x000000CE fileSignInfo.ptszSignerName = TAOBAO (CHINA) SOFTWARE CO.,LTD.
+12:47:16:746,0x000000CE ReadAuthSDKConfigProxy is Signal
+12:47:16:747,0x000000CE SafeGurad Config File Not Exist
+12:47:16:754,0x000000CE strDllPath = c:\Program Files\AliWorkbench\6.06.02N\Skin\125, ExePath=c:\Program Files\AliWorkbench\, uScaleFactorSDA=125
+12:47:16:827,0x000000CE strContainerName=CLoginMainUIContainer
+12:47:48:199,0x000000CE DoLogin
+12:47:48:200,0x000000CE strContainerName=CLoginingPageContainer
+12:47:48:607,0x00000116 GetResponse Parse Package
+12:47:48:608,0x000000CE CAuthSDKLogic::MessageProc Message=6026,wParam=1001
+12:47:48:608,0x000000CE dwCode=3000, actionType=OTHER, strMessage=成功, enUrlFromType=0
+12:47:48:608,0x00000116 AddUserValue is Signal
+12:47:48:608,0x000000CE strContainerName=CLoginMainUIContainer
+12:47:48:609,0x000000CE CAuthSDKImp::OnAuthSDKResult dwAction=6026,dwResult=1001
+12:47:48:609,0x00000116 SafeGurad Config File Not Exist
+12:47:48:611,0x000000CE DoRefreshSSOToken
+12:47:49:077,0x00000116 GetResponse Parse Package
+12:47:49:077,0x000000CE CAuthSDKLogic::MessageProc Message=6029,wParam=1008
+12:47:49:077,0x000000CE CAuthSDKImp::OnAuthSDKResult dwAction=6029,dwResult=1008
+12:47:49:338,0x000000CE strDllPath = c:\Program Files\AliWorkbench\6.06.02N\Skin\125, ExePath=c:\Program Files\AliWorkbench\, uScaleFactorSDA=125
+12:47:49:343,0x000000CE strContainerName=CLoginMainUIContainer
+12:48:24:003,0x000000CE Log finished
+16:53:27:684,0x00000009 =============================================
+16:53:27:699,0x00000009 Log at: 2020-03-31 16:53:27:684, compiled: Feb 28 2018 11:49:23
+16:53:27:699,0x00000009 PID: 0008, Exe: c:\Program Files\AliWorkbench\AliWorkbench.exe
+16:53:27:699,0x00000009 Init Log
+16:53:27:702,0x00000009 fileSignInfo.ptszSignerName = TAOBAO (CHINA) SOFTWARE CO.,LTD.
+16:53:27:705,0x00000009 ReadAuthSDKConfigProxy is Signal
+16:53:27:721,0x00000009 strDllPath = c:\Program Files\AliWorkbench\6.06.02N\Skin\125, ExePath=c:\Program Files\AliWorkbench\, uScaleFactorSDA=125
+16:53:27:773,0x00000009 strContainerName=CLoginMainUIContainer
+16:53:29:718,0x00000009 DoLogin 3, IsVisible=1
+16:53:29:718,0x00000009 DoRememberPasswordLogin
+16:53:29:718,0x00000009 _DoAutoLogin OnAutoLogin
+16:53:29:719,0x00000009 strContainerName=CLoginingPageContainer
+16:53:30:087,0x000000B5 GetResponse Parse Package
+16:53:30:088,0x00000009 CAuthSDKLogic::MessageProc Message=6027,wParam=1004
+16:53:30:088,0x000000B5 AddUserValue is Signal
+16:53:30:088,0x00000009 dwCode=3000, actionType=OTHER, strMessage=成功, enUrlFromType=0
+16:53:30:088,0x00000009 strContainerName=CLoginMainUIContainer
+16:53:30:089,0x00000009 CAuthSDKImp::OnAuthSDKResult dwAction=6027,dwResult=1004
+16:53:30:091,0x00000009 DoRefreshSSOToken
+16:53:30:782,0x000000B5 GetResponse Parse Package
+16:53:30:782,0x00000009 CAuthSDKLogic::MessageProc Message=6029,wParam=1008
+16:53:30:782,0x00000009 CAuthSDKImp::OnAuthSDKResult dwAction=6029,dwResult=1008
+16:53:31:097,0x00000009 strDllPath = c:\Program Files\AliWorkbench\6.06.02N\Skin\125, ExePath=c:\Program Files\AliWorkbench\, uScaleFactorSDA=125
+16:53:31:100,0x00000009 strContainerName=CLoginMainUIContainer
+16:54:51:692,0x00000009 strContainerName=CBrowserContainer
+16:54:51:692,0x00000009 _DoShowH5 enUrlFromType=1
+16:55:10:951,0x00000009 QrLogin info is 1585644910771, 0, revally27
+16:55:10:951,0x00000009 CAuthSDKLoginUI::_DoQRLogin
+16:55:10:951,0x00000009 DoQRLogin
+16:55:10:951,0x00000009 strContainerName=CLoginingPageContainer
+16:55:11:272,0x000000B5 GetResponse Parse Package
+16:55:11:272,0x00000009 CAuthSDKLogic::MessageProc Message=6031,wParam=1012
+16:55:11:273,0x00000009 dwCode=3000, actionType=OTHER, strMessage=成功, enUrlFromType=0
+16:55:11:273,0x000000B5 AddUserValue is Signal
+16:55:11:273,0x00000009 strContainerName=CLoginMainUIContainer
+16:55:11:273,0x00000009 CAuthSDKImp::OnAuthSDKResult dwAction=6031,dwResult=1012
+16:55:11:277,0x00000009 DoRefreshSSOToken
+16:55:11:812,0x000000B5 GetResponse Parse Package
+16:55:11:812,0x00000009 CAuthSDKLogic::MessageProc Message=6029,wParam=1008
+16:55:11:812,0x00000009 CAuthSDKImp::OnAuthSDKResult dwAction=6029,dwResult=1008
+16:55:12:031,0x00000009 strDllPath = c:\Program Files\AliWorkbench\6.06.02N\Skin\125, ExePath=c:\Program Files\AliWorkbench\, uScaleFactorSDA=125
+16:55:12:033,0x00000009 strContainerName=CLoginMainUIContainer
+16:55:19:968,0x00000009 Log finished

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style>
+			.wrapper {
+				height: 100%;
+				width: 100%;
+			}
+			
+			.content {
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+				position: absolute;
+				margin: auto;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+			
+			textarea {
+				width: 800px;
+				height: 200px;
+				font-size: 20px;
+			}
+		</style>
+		
+		<script type="text/javascript" src="../base-js/jquery-3.3.1.js"></script>
+
+		<script>
+			// $(function() {}); 是 $(document).ready(function(){})的简写。
+			/*$(function() {
+				console.log("ready执行");
+			});
+
+			$(function() {
+				console.log("ready2执行");
+			});
+			
+			window.onload = function() {
+				console.log('load执行');
+			};
+			window.onload = function() {
+				console.log('load2执行');
+			}*/
+
+			console.log("1");
+			console.log("2");
+			console.log("3");
+		</script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="content">
+				<textarea>
+			DOM文档加载步骤： 
+			1.解析HTML结构 
+			2.加载外部的脚本和样式文件 
+			3.解析并执行脚本代码 
+			4.执行$(function(){})内对应代码 
+			5.加载图片等二进制资源 
+			6.页面加载完毕，执行window.onload
+				</textarea>
+			</div>
+		</div>
+
+	</body>
+
+</html>

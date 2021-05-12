@@ -1,67 +1,127 @@
 设置你的用户名称与邮件地址
-$ git config --global user.name "John Doe"
-$ git config --global user.email johndoe@example.com
+
+$ git config --global user.name "alibao"
+$ git config --global user.email walkwithdream@163.com
 
 配置默认文本编辑器
-$ git config --global core.editor vim
-$ git config --global core.editor emacs
-$ git config --global core.editor " 'C:/Program Files/Notepad++/notepad++.exe' -multiInst -nosession"
-$ git config --global core.editor " 'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -nosession"
+
+$ git config --global core.editor vim
+
+$ git config --global core.editor emacs
+
+$ git config --global core.editor " 'C:/Program Files/Notepad++/notepad++.exe' -multiInst -nosession"
+
+$ git config --global core.editor " 'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -nosession"
 
 检查配置信息
-$ git config --list
+
+$ git config --list
+
 
 
 方法1：初始化仓库
-$ git init
-跟踪文件:
+
+$ git init
+
+跟踪文件:
+
 $ git add *.c
-$ git add LICENSE
-$ git commit -m 'initial project version'
-方法2：克隆现有的仓库
-$ git clone https://github.com/libgit2/libgit2
-$ git clone https://github.com/libgit2/libgit2 mylibgit
+
+$ git add LICENSE
+
+$ git commit -m 'initial project version'
+
+方法2：克隆现有的仓库
+
+$ git clone https://github.com/libgit2/libgit2
+
+$ git clone https://github.com/libgit2/libgit2 mylibgit
+
 
 
 检查当前文件状态
-$ git status
-跟踪新文件
-$ git add readme.txt
-暂存已修改文件
-$ git add readme.txt
-提交更改
-$ git commit$ git commit -m "Story 182: Fix benchmarks for speed"
+
+$ git status
+
+跟踪新文件
+
+$ git add readme.txt
+
+暂存已修改文件
+
+$ git add readme.txt
+
+提交更改
+
+$ git commit
+$ git commit -m "Story 182: Fix benchmarks for speed"
+
 
 
 在 Git 中对文件改名
-$ git mv file_from file_to
+
+$ git mv file_from file_to
+
 $ git mv README.md README
 $ mv README.md README
-$ git rm README.md$ git add README
+
+$ git rm README.md
+$ git add README
 
 
-查看远程仓库
-$ cd simplegit-progit
+
+查看远程仓库
+
+$ cd simplegit-progit
+
 $ git remote
-$ git remote -v
-添加远程仓库
-$ git remote add test https://github.com/bigdig/OCR
-$ git fetch test 
-从远程仓库中抓取与拉取
+
+$ git remote -v
+
+添加远程仓库
+
+$ git remote add test https://github.com/bigdig/OCR
+
+$ git fetch test 
+
+从远程仓库中抓取与拉取
+
 $ git fetch [remote-name]
-$ git pull [remote-name]
-推送到远程仓库
-$ git push [remote-name] [branch-name]
-你必须有写权限！检查远程仓库
-$ git remote show [remote-name]
+
+$ git pull [remote-name]
+
+推送到远程仓库
+
+$ git push [remote-name] [branch-name]
+
+你必须有写权限！
+检查远程仓库
+
+$ git remote show [remote-name]
+
 远程仓库的移除与重命名
-$ git remote rename origin Eric
+
+$ git remote rename origin Eric
+
 $ git remote rm Eric
 
 $ git remote add origin (刚才复制的远程库的SSH)
 
 强制push：
 $ git push -u origin master -f
+
+强制push分支
+方案一 git push origin develop:master -f
+ 就可以把本地的develop分支强制(-f)推送到远程master
+
+
+方案二 
+git checkout master // 切换到旧的分支  
+
+git reset –hard develop // 将本地的旧分支 master 重置成 develop
+
+git push origin master –force // 再推送到远程仓库
+
 
 撤销commit
 git reset –mixed ：此为默认方式，不带任何参数的git reset，即时这种方式，它回退到某个版本，只保留源码，回退commit和index信息。
@@ -71,9 +131,16 @@ git reset –hard ：彻底回退到某个版本，本地的源码也会变为上一个版本的内容。
 
 ~$git add --all
 ~$git commit -m "Initial commit"
-~$git push -u origin master
+~$git push -u origin master
+
 
 
 #下载Git 项目 -b 表示下载分支
 $ git clone -b SVG维护版本 git@gitee.com:Eric-Green/LinkeyBPM.git
+
+# 切换分支master_dev
+  git checkout master_dev
+
+
+
 

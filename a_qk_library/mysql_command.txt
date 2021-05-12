@@ -1,3 +1,4 @@
+
 #数据库备份
 #cmd备份 bpm为数据库名，后面空格跟表名(不跟为全部)，多个数据或表，用空格隔开  --default-character-set=utf8
  mysqldump -u root -p bpm >E:\backup.sql
@@ -32,4 +33,10 @@ collation-server=utf8_general_ci
 
 #修改Root用户密码
  set password for root@localhost = password('1234'); 
+
+
+#mysql  查看死锁并释放死锁
+show processlist         --查看数据库中各个进程的运行状态
+select * from information_schema.innodb_trx        ---查询正在运行的事务
+kill id
  

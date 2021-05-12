@@ -16,6 +16,12 @@ move 'Linkey_ADNewWay_01' to 'D:\Program Files\Microsoft SQL Server\MSSQL13.MSSQ
 move 'Linkey_ADNewWay_01_log' to 'D:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER2016\MSSQL\DATA\NewWay_01_log.ldf'
 
 
+--附件.mdf和.ldf文件
+EXEC  sp_attach_db  @dbname  =  'gscm_106_bak',  
+@filename1  =  'G:\database\MSSQL\Data\Linkey_ADNewWay_01.mdf', 
+@filename2  =  'G:\database\MSSQL\Data\Linkey_ADNewWay_01_log.ldf'
+
+
 --创建数据库
 --===============================================================
 --查找命令
@@ -41,5 +47,15 @@ filegrowth=1mb
 
 
 --新增一个字段，加备注
+
+
+--sa用户被锁定解决方案
+ALTER LOGIN sa ENABLE ;
+GO
+ALTER LOGIN sa WITH PASSWORD = '新密码哦' unlock, check_policy = off,
+check_expiration = off ;
+GO
+
+
 
 

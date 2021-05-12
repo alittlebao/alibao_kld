@@ -1,0 +1,15 @@
+﻿2020-03-31 12:47:49,082 205 219 ERROR Recovery.RecoveryEngine CRecoveryEngine::InitRecoveryData strUID is cntaobaorevally27 ,  FromXmlFile all exception.
+2020-03-31 12:47:49,083 205 219 ERROR Recovery.RecoveryEngine CRecoveryEngine::InitRecoveryData strUID is cntaobaorevally27 ,  FromXmlFile crash exception.
+2020-03-31 12:47:49,084 205 219 WARN Recovery.RecoveryEngine CRecoveryEngine::InitRecoveryData strUID is cntaobaorevally27 ,    recover List is: 
+ <xparam/>
+
+2020-03-31 16:53:30,803 8 124 ERROR Recovery.RecoveryEngine CRecoveryEngine::InitRecoveryData strUID is cntaobaorevally27 ,  FromXmlFile all exception.
+2020-03-31 16:53:30,803 8 124 ERROR Recovery.RecoveryEngine CRecoveryEngine::InitRecoveryData strUID is cntaobaorevally27 ,  FromXmlFile crash exception.
+2020-03-31 16:53:30,824 8 124 WARN Recovery.RecoveryEngine CRecoveryEngine::InitRecoveryData strUID is cntaobaorevally27 ,    recover List is: 
+ <xparam/>
+
+2020-03-31 16:55:11,813 8 124 ERROR Recovery.RecoveryEngine CRecoveryEngine::InitRecoveryData strUID is cntaobaorevally27 ,  FromXmlFile all exception.
+2020-03-31 16:55:11,813 8 124 ERROR Recovery.RecoveryEngine CRecoveryEngine::InitRecoveryData strUID is cntaobaorevally27 ,  FromXmlFile crash exception.
+2020-03-31 16:55:11,814 8 124 WARN Recovery.RecoveryEngine CRecoveryEngine::InitRecoveryData strUID is cntaobaorevally27 ,    recover List is: 
+ <xparam/>
+

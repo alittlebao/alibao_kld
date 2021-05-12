@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<style>
+			.wrapper {
+				height: 100%;
+				width: 100%;
+			}
+			
+			.content {
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+				position: absolute;
+				margin: auto;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+			
+			textarea {
+				width: 800px;
+				height: 200px;
+				font-size: 20px;
+			}
+		</style>
+
+		<script type="text/javascript" src="../base-js/jquery-3.3.1.js"></script>
+
+		<script>
+			// $(function() {}); 是 $(document).ready(function(){})的简写。
+			$(function() {
+				// 1 取对象(选择器)  2 SPAN取值
+				console.log("========= ID =========");
+				//console.log("val=> " + $("#testid2").val());
+				console.log("text=> " + $("#testid2").text());
+				console.log("html=> " + $("#testid2").html());
+				console.log("parenttext=> " + $("#testdiv1 span:nth-child(2)").text());
+				console.log("parenthtml=> " + $("#testdiv1 span:nth-child(2)").html());
+
+				console.log("=========class========");
+				//console.log("classtext=> " + $(".testspan").text());
+				console.log("classhtml=> " + $(".testspan").html());
+				console.log("parenttext1=> " + $(".testspan:first-child").text());
+				console.log("parenthtml1=> " + $(".testspan:first-child").html());
+				console.log("parenttext2=> " + $(".testspan:nth-child(1)").text());
+				console.log("parenthtml2=> " + $(".testspan:nth-child(1)").html());
+			});
+
+			window.onload = function() {
+				//console.log('load2执行');
+			}
+		</script>
+
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="content">
+				<div id="testdiv1">
+					<span class="testspan" id="testid1">value1</span>
+					<span class="testspan" id="testid2">value2</span>
+					<span class="testspan" id="testid3">value3</span>
+					<span class="testspan" id="testid4">value4</span>
+				</div>
+
+			</div>
+		</div>
+
+	</body>
+
+</html>

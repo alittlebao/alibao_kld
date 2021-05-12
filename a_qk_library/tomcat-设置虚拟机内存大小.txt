@@ -2,11 +2,12 @@
 
 的前面，增加如下设置：
 
-JAVA_OPTS=”-Xms [min heap size]-Xmx[max heap size]”
+JAVA_OPTS=”-Xms [min heap size]-Xmx[max heap size]”   JAVA_OPTS="-Xms1024m -Xmx1024m -XX:PermSize=128m -XX:MaxPermSize=256m"
 
 例如：
 
-JAVA_OPTS="-Xms1024m -Xmx1024m -XX:PermSize=128m -XX:MaxPermSize=256m"
+
+set JAVA_OPTS=-XX:MaxNewSize=192m -XX:PermSize=196m -XX:MaxPermSize=256m -Xms1024m -Xmx1536m
 
 
 -Xms：初始堆大小

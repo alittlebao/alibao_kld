@@ -1,0 +1,58 @@
+[03-31 12:47:16 254651978 205 206 WARNING] imsdk IMBizMgr, imbizmgr.cpp(47) CIMBizMgr::Init,  Biz Init Begin. (imsdk_version), ##1#{ [2.12.7_IMSDK] }##
+[03-31 12:47:16 254651987 205 206 WARNING] imsdk IMServiceMgr, imservicemgr.cpp(36) CIMServiceMgr::Init, Function Begin. (imsdk_version), ##1#{ [2.12.7_IMSDK] }##
+[03-31 12:47:16 254651988 205 206 WARNING] imsdk IMServiceMgr, imservicemgr.cpp(51) CIMServiceMgr::Init, Function End. (imsdk_version), ##1#{ [2.12.7_IMSDK] }##
+[03-31 12:47:16 254651988 205 206 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(72) CIMStorageMgr::Init, Function Begin. (imsdk_version), ##1#{ [2.12.7_IMSDK] }##
+[03-31 12:47:16 254652023 205 206 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(98) CIMStorageMgr::Init, Function End (imsdk_version), ##1#{ [2.12.7_IMSDK] }##
+[03-31 12:47:16 254652023 205 206 WARNING] imsdk IMBizMgr, imbizmgr.cpp(74) CIMBizMgr::Init, Biz Init End. (imsdk_version), ##1#{ [2.12.7_IMSDK] }##
+[03-31 12:47:16 254652023 205 206 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(112) CIMStorageMgr::OnInitCallback,  wait for callback, ##0#{}##
+[03-31 12:47:16 254652025 205 206 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(112) CIMStorageMgr::OnInitCallback,  wait for callback, ##0#{}##
+[03-31 12:47:16 254652026 205 206 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(112) CIMStorageMgr::OnInitCallback,  wait for callback, ##0#{}##
+[03-31 12:47:16 254652026 205 206 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(112) CIMStorageMgr::OnInitCallback,  wait for callback, ##0#{}##
+[03-31 12:47:16 254652026 205 206 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(112) CIMStorageMgr::OnInitCallback,  wait for callback, ##0#{}##
+[03-31 12:47:16 254652041 205 206 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(107) CIMStorageMgr::OnInitCallback,  callback all finished!, ##0#{}##
+[03-31 12:48:23 254719055 205 206 WARNING] imsdk IMBizMgr, imbizmgr.cpp(81) CIMBizMgr::Uninit, , ##0#{}##
+[03-31 12:48:23 254719055 205 206 WARNING] imsdk IMBizMgr, imbizmgr.cpp(118) CIMBizMgr::UninitImp, Biz UnInit. (imsdk_version), ##1#{ [2.12.7_IMSDK] }##
+[03-31 12:48:23 254719055 205 206 WARNING] imsdk IMServiceMgr, imservicemgr.cpp(56) CIMServiceMgr::Uninit, , ##0#{}##
+[03-31 12:48:23 254719055 205 206 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(118) CIMStorageMgr::Uninit, , ##0#{}##
+[03-31 12:48:23 254719056 205 206 WARNING] imsdk IMBizMgr, imbizmgr.cpp(141) CIMBizMgr::OnModelUnInitCallback,  wait for callback, ##0#{}##
+[03-31 12:48:23 254719056 205 269 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(142) CIMStorageMgr::OnUninitTask, OnUninitTask, ##0#{}##
+[03-31 12:48:23 254719056 205 206 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(142) CIMStorageMgr::OnUninitTask, OnUninitTask, ##0#{}##
+[03-31 12:48:23 254719056 205 269 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(153) CIMStorageMgr::OnUninitTask, Uninit  wait for callback, ##0#{}##
+[03-31 12:48:23 254719056 205 206 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(153) CIMStorageMgr::OnUninitTask, Uninit  wait for callback, ##0#{}##
+[03-31 12:48:23 254719056 205 206 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(142) CIMStorageMgr::OnUninitTask, OnUninitTask, ##0#{}##
+[03-31 12:48:23 254719056 205 206 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(153) CIMStorageMgr::OnUninitTask, Uninit  wait for callback, ##0#{}##
+[03-31 12:48:23 254719056 205 206 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(142) CIMStorageMgr::OnUninitTask, OnUninitTask, ##0#{}##
+[03-31 12:48:23 254719056 205 206 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(153) CIMStorageMgr::OnUninitTask, Uninit  wait for callback, ##0#{}##
+[03-31 12:48:23 254719056 205 206 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(142) CIMStorageMgr::OnUninitTask, OnUninitTask, ##0#{}##
+[03-31 12:48:23 254719057 205 206 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(153) CIMStorageMgr::OnUninitTask, Uninit  wait for callback, ##0#{}##
+[03-31 12:48:23 254719057 205 206 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(142) CIMStorageMgr::OnUninitTask, OnUninitTask, ##0#{}##
+[03-31 12:48:23 254719057 205 206 WARNING] imsdk IMBizMgr, imbizmgr.cpp(136) CIMBizMgr::OnModelUnInitCallback,  callback all finished!, ##0#{}##
+[03-31 16:53:27 1062129 8 9 WARNING] imsdk IMBizMgr, imbizmgr.cpp(47) CIMBizMgr::Init,  Biz Init Begin. (imsdk_version), ##1#{ [2.12.7_IMSDK] }##
+[03-31 16:53:27 1062150 8 9 WARNING] imsdk IMServiceMgr, imservicemgr.cpp(36) CIMServiceMgr::Init, Function Begin. (imsdk_version), ##1#{ [2.12.7_IMSDK] }##
+[03-31 16:53:27 1062151 8 9 WARNING] imsdk IMServiceMgr, imservicemgr.cpp(51) CIMServiceMgr::Init, Function End. (imsdk_version), ##1#{ [2.12.7_IMSDK] }##
+[03-31 16:53:27 1062151 8 9 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(72) CIMStorageMgr::Init, Function Begin. (imsdk_version), ##1#{ [2.12.7_IMSDK] }##
+[03-31 16:53:27 1062178 8 9 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(98) CIMStorageMgr::Init, Function End (imsdk_version), ##1#{ [2.12.7_IMSDK] }##
+[03-31 16:53:27 1062178 8 9 WARNING] imsdk IMBizMgr, imbizmgr.cpp(74) CIMBizMgr::Init, Biz Init End. (imsdk_version), ##1#{ [2.12.7_IMSDK] }##
+[03-31 16:53:27 1062178 8 9 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(112) CIMStorageMgr::OnInitCallback,  wait for callback, ##0#{}##
+[03-31 16:53:27 1062179 8 9 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(112) CIMStorageMgr::OnInitCallback,  wait for callback, ##0#{}##
+[03-31 16:53:27 1062179 8 9 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(112) CIMStorageMgr::OnInitCallback,  wait for callback, ##0#{}##
+[03-31 16:53:27 1062183 8 9 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(112) CIMStorageMgr::OnInitCallback,  wait for callback, ##0#{}##
+[03-31 16:53:27 1062184 8 9 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(112) CIMStorageMgr::OnInitCallback,  wait for callback, ##0#{}##
+[03-31 16:53:27 1062193 8 9 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(107) CIMStorageMgr::OnInitCallback,  callback all finished!, ##0#{}##
+[03-31 16:55:19 1174121 8 9 WARNING] imsdk IMBizMgr, imbizmgr.cpp(81) CIMBizMgr::Uninit, , ##0#{}##
+[03-31 16:55:19 1174122 8 9 WARNING] imsdk IMBizMgr, imbizmgr.cpp(118) CIMBizMgr::UninitImp, Biz UnInit. (imsdk_version), ##1#{ [2.12.7_IMSDK] }##
+[03-31 16:55:19 1174122 8 9 WARNING] imsdk IMServiceMgr, imservicemgr.cpp(56) CIMServiceMgr::Uninit, , ##0#{}##
+[03-31 16:55:19 1174127 8 9 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(118) CIMStorageMgr::Uninit, , ##0#{}##
+[03-31 16:55:19 1174127 8 9 WARNING] imsdk IMBizMgr, imbizmgr.cpp(141) CIMBizMgr::OnModelUnInitCallback,  wait for callback, ##0#{}##
+[03-31 16:55:19 1174127 8 166 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(142) CIMStorageMgr::OnUninitTask, OnUninitTask, ##0#{}##
+[03-31 16:55:19 1174127 8 9 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(142) CIMStorageMgr::OnUninitTask, OnUninitTask, ##0#{}##
+[03-31 16:55:19 1174128 8 166 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(153) CIMStorageMgr::OnUninitTask, Uninit  wait for callback, ##0#{}##
+[03-31 16:55:19 1174128 8 9 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(153) CIMStorageMgr::OnUninitTask, Uninit  wait for callback, ##0#{}##
+[03-31 16:55:19 1174128 8 9 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(142) CIMStorageMgr::OnUninitTask, OnUninitTask, ##0#{}##
+[03-31 16:55:19 1174128 8 9 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(153) CIMStorageMgr::OnUninitTask, Uninit  wait for callback, ##0#{}##
+[03-31 16:55:19 1174128 8 9 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(142) CIMStorageMgr::OnUninitTask, OnUninitTask, ##0#{}##
+[03-31 16:55:19 1174128 8 9 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(153) CIMStorageMgr::OnUninitTask, Uninit  wait for callback, ##0#{}##
+[03-31 16:55:19 1174128 8 9 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(142) CIMStorageMgr::OnUninitTask, OnUninitTask, ##0#{}##
+[03-31 16:55:19 1174128 8 9 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(153) CIMStorageMgr::OnUninitTask, Uninit  wait for callback, ##0#{}##
+[03-31 16:55:19 1174128 8 9 WARNING] imsdk IMStorageMgr, imstoragemgr.cpp(142) CIMStorageMgr::OnUninitTask, OnUninitTask, ##0#{}##
+[03-31 16:55:19 1174128 8 9 WARNING] imsdk IMBizMgr, imbizmgr.cpp(136) CIMBizMgr::OnModelUnInitCallback,  callback all finished!, ##0#{}##

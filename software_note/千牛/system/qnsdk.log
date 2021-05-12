@@ -1,0 +1,25 @@
+[03-31 12:47:49 254684437 205 206 WARNING] qnbiz qnloginbiz.cpp(122) CQNLoginBiz::Login, QNLoginBiz start user: revally27
+[03-31 12:47:49 254684675 205 309 WARNING] qnmodel jdyloginnetservice.cpp(245) CJDYLoginNetService::HandleLoginRsp, HandleLoginRsp
+[03-31 12:47:49 254684675 205 309 WARNING] qnmodel jdyloginnetservice.cpp(211) CJDYLoginNetService::NotifyLoginError, NotifyLoginError, code:914, errmsg:您的千牛版本过低，请到work.taobao.com下载最新版本, subcode:clientVersion:6.06.02N, suberrMsg:
+[03-31 12:47:49 254684676 205 206 ERROR] qnbiz qnaccountmgr.cpp(97) CQNAccountMgr::GetAccount, empty AccountId
+[03-31 12:47:49 254684676 205 206 WARNING] qnbiz qnaccountmgr.cpp(98) CQNAccountMgr::GetAccount, [ErrorTrace2Server@ErrorTraceUtil.cpp:38]
+[03-31 12:47:53 254688732 205 315 ERROR] qnbiz qnaccountmgr.cpp(97) CQNAccountMgr::GetAccount, empty AccountId
+[03-31 12:47:53 254688732 205 315 WARNING] qnbiz qnaccountmgr.cpp(98) CQNAccountMgr::GetAccount, [CQNUpdateBiz::GetLoginNick@AppGlobalBiz\QNUpdate\QNUpdateBiz.cpp:544]
+[03-31 12:48:23 254719042 205 206 ERROR] qnbiz qnbizmgr.cpp(151) CQNBizMgr::IsBizSupported, Create {8B7429FF-6ADE-42B6-A74A-4AC8EE6F1E19} with Empty Account
+[03-31 16:53:30 1065350 8 9 WARNING] qnbiz qnloginbiz.cpp(122) CQNLoginBiz::Login, QNLoginBiz start user: revally27
+[03-31 16:53:31 1065639 8 223 WARNING] qnmodel jdyloginnetservice.cpp(245) CJDYLoginNetService::HandleLoginRsp, HandleLoginRsp
+[03-31 16:53:31 1065639 8 223 WARNING] qnmodel jdyloginnetservice.cpp(211) CJDYLoginNetService::NotifyLoginError, NotifyLoginError, code:914, errmsg:您的千牛版本过低，请到work.taobao.com下载最新版本, subcode:clientVersion:6.06.02N, suberrMsg:
+[03-31 16:53:31 1065639 8 9 ERROR] qnbiz qnaccountmgr.cpp(97) CQNAccountMgr::GetAccount, empty AccountId
+[03-31 16:53:31 1065639 8 9 WARNING] qnbiz qnaccountmgr.cpp(98) CQNAccountMgr::GetAccount, [ErrorTrace2Server@ErrorTraceUtil.cpp:38]
+[03-31 16:53:32 1067315 8 229 ERROR] qnbiz qnaccountmgr.cpp(97) CQNAccountMgr::GetAccount, empty AccountId
+[03-31 16:53:32 1067315 8 229 WARNING] qnbiz qnaccountmgr.cpp(98) CQNAccountMgr::GetAccount, [CQNUpdateBiz::GetLoginNick@AppGlobalBiz\QNUpdate\QNUpdateBiz.cpp:544]
+[03-31 16:54:45 1140393 8 9 ERROR] qnbiz qnaccountmgr.cpp(97) CQNAccountMgr::GetAccount, empty AccountId
+[03-31 16:54:45 1140393 8 9 WARNING] qnbiz qnaccountmgr.cpp(98) CQNAccountMgr::GetAccount, [CQNUpdateBiz::GetLoginNick@AppGlobalBiz\QNUpdate\QNUpdateBiz.cpp:544]
+[03-31 16:54:45 1140404 8 9 ERROR] qnbiz qnaccountmgr.cpp(97) CQNAccountMgr::GetAccount, empty AccountId
+[03-31 16:54:45 1140404 8 9 WARNING] qnbiz qnaccountmgr.cpp(98) CQNAccountMgr::GetAccount, [CQNUpdateBiz::GetLoginNick@AppGlobalBiz\QNUpdate\QNUpdateBiz.cpp:544]
+[03-31 16:55:11 1166367 8 9 WARNING] qnbiz qnloginbiz.cpp(122) CQNLoginBiz::Login, QNLoginBiz start user: revally27
+[03-31 16:55:12 1166579 8 223 WARNING] qnmodel jdyloginnetservice.cpp(245) CJDYLoginNetService::HandleLoginRsp, HandleLoginRsp
+[03-31 16:55:12 1166579 8 223 WARNING] qnmodel jdyloginnetservice.cpp(211) CJDYLoginNetService::NotifyLoginError, NotifyLoginError, code:914, errmsg:您的千牛版本过低，请到work.taobao.com下载最新版本, subcode:clientVersion:6.06.02N, suberrMsg:
+[03-31 16:55:12 1166580 8 9 ERROR] qnbiz qnaccountmgr.cpp(97) CQNAccountMgr::GetAccount, empty AccountId
+[03-31 16:55:12 1166580 8 9 WARNING] qnbiz qnaccountmgr.cpp(98) CQNAccountMgr::GetAccount, [ErrorTrace2Server@ErrorTraceUtil.cpp:38]
+[03-31 16:55:19 1174090 8 9 ERROR] qnbiz qnbizmgr.cpp(151) CQNBizMgr::IsBizSupported, Create {8B7429FF-6ADE-42B6-A74A-4AC8EE6F1E19} with Empty Account

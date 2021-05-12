@@ -1,0 +1,426 @@
+一、检查和安装依赖包
+1.检查依赖包
+rpm -q binutils compat-libstdc++-33 elfutils-libelf elfutils-libelf-devel gcc gcc-c++ glibc-2.5 glibc-common glibc-devel glibc-headers ksh libaio libaio-devel libgcc libstdc++ libstdc++-devel make sysstat unixODBC unixODBC-devel
+
+对照系统中的依赖包，缺少哪个就直接下载哪个
+[root@VM-0-3-centos ~]# rpm -q binutils compat-libstdc++-33 elfutils-libelf elfutils-libelf-devel gcc gcc-c++ glibc-2.5 glibc-common glibc-devel glibc-headers ksh libaio libaio-devel libgcc libstdc++ libstdc++-devel make sysstat unixODBC unixODBC-devel
+binutils-2.27-41.base.el7_7.3.x86_64
+package compat-libstdc++-33 is not installed
+elfutils-libelf-0.176-2.el7.x86_64
+package elfutils-libelf-devel is not installed
+gcc-4.8.5-39.el7.x86_64
+package gcc-c++ is not installed
+package glibc-2.5 is not installed
+glibc-common-2.17-292.el7.x86_64
+glibc-devel-2.17-292.el7.x86_64
+glibc-headers-2.17-292.el7.x86_64
+package ksh is not installed
+libaio-0.3.109-13.el7.x86_64
+package libaio-devel is not installed
+libgcc-4.8.5-39.el7.x86_64
+libstdc++-4.8.5-39.el7.x86_64
+package libstdc++-devel is not installed
+make-3.82-24.el7.x86_64
+package sysstat is not installed
+package unixODBC is not installed
+package unixODBC-devel is not installed
+[root@VM-0-3-centos ~]# 
+
+2.对照结果如下，以下是腾讯云CentOS7.7中默认缺少的包，一共10个：
+yum -y install compat-libstdc++-33
+yum -y install elfutils-libelf-devel
+yum -y install gcc-c++
+yum -y install glibc-2.5
+yum -y install ksh
+yum -y install libaio-devel
+yum -y install libstdc++-devel
+yum -y install sysstat
+yum -y install unixODBC
+yum -y install unixODBC-devel
+
+3.安装JDK1.8
+# Set JAVA_HOME on /etc/profile
+export JAVA_HOME=/usr/java/jdk1.8.0_172
+export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export PATH=$PATH:$JAVA_HOME/bin
+
+二、修改操作系统配置参数
+1.修改用户SHELL的限制 /etc/security/limits.conf文件，最后追加
+oracle soft nproc 2047
+oracle hard nproc 16384
+oracle soft nofile 1024
+oracle hard nofile 65536
+
+2.修改/etc/pam.d/login文件最后追加
+session    required    /lib/security/pam_limits.so
+session    required    pam_limits.so
+
+3.修改Linux内核 vi /etc/sysctl.conf 文件最后追加
+
+# 设置最大打开文件数
+fs.file-max = 6815744
+fs.aio-max-nr = 1048576
+# 共享内存的总量，8G内存设置：2097152*4k/1024/1024
+#kernel.shmall = 2097152
+# 最大共享内存的段大小，G换算成k计算
+#kernel.shmmax = 2147483648
+# 整个系统共享内存端的最大数
+#kernel.shmmni = 4096
+kernel.sem = 250 32000 100 128
+# 可使用的IPv4端口范围
+net.ipv4.ip_local_port_range = 9000 65500
+net.core.rmem_default = 4194304
+net.core.rmem_max = 4194304
+net.core.wmem_default = 262144
+net.core.wmem_max = 1048576
+
+PS：要使/etc/sysctl.conf更改立即生效，执行以下命令。输入：
+sysctl -p
+
+4.编辑/etc/profile，文件最后追加
+
+# oracle 用户的配置
+if [ $USER = "oracle" ]; then
+    if [ $SHELL = "/bin/ksh" ]; then
+        ulimit -p 16384
+        ulimit -n 65536
+    else
+        ulimit -u 16384 -n 65536
+    fi
+fi
+
+要使/etc/profile更改立即生效，执行以下命令。输入：
+source /etc/profile
+
+
+三、安装前的准备
+1.创建相关用户和组
+[root@VM-0-3-centos ~]# groupadd dba
+[root@VM-0-3-centos ~]# groupadd oinstall
+[root@VM-0-3-centos ~]# useradd -g oinstall -G dba -m oracle
+[root@VM-0-3-centos ~]# passwd oracle
+Changing password for user oracle.
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+passwd: all authentication tokens updated successfully.
+[root@VM-0-3-centos ~]# 
+
+2.创建数据库软件目录权限
+# 数据库安装目录
+mkdir -p /usr/oracle/product/12.2.0/db_1
+# 数据库创建及使用过程中的日志目录
+mkdir -p /var/oracle/oraInventory
+# 存放数据库的数据目录
+mkdir -p /var/oracle/oradata
+# 数据恢复目录和备份文件
+mkdir -p /var/oracle/recovery
+# 设置oracle用户访问权限的所有者
+chmod -R 775 /usr/oracle
+chown -R oracle:oinstall /usr/oracle
+chmod -R 775 /var/oracle
+chown -R oracle:oinstall /var/oracle
+
+3.更改oracle用户的/home/oracle/.bash_profile文件配置Oracle的环境变量
+# 在.bash_profile文件最后，配置Oracle的环境变量
+export ORACLE_BASE=/usr/oracle
+export ORACLE_HOME=$ORACLE_BASE/product/12.2.0/db_1
+export PATH=$PATH:$ORACLE_HOME/bin
+export CLASSPATH=$ORACLE_HOME/JRE:$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib64:/usr/lib64:/usr/local/lib64
+export ORACLE_SID=orcl
+export NLS_LANG=AMERICAN_AMERICA.AL32UTF8
+
+4.下载Oracel并解压
+wget https://download.oracle.com/otn/linux/oracle12c/122010/linuxx64_12201_database.zip?AuthParam=1597608686_cee1ebc02c60e7fc3d9595ecd2a9ecbe
+注意：下载过程需要验证，请先登陆后点下载，再复制自己的下载地址
+
+# 解压下载文件到/usr/oracle/database 目录
+unzip /root/linuxx64_12201_database.zip /usr/oracle/
+
+
+四、安装Oracle数据库软件
+1.修改自动应答文件 /usr/oracle/database/response/db_install.rsp，按如下内容修改即可
+# 30行 安装类型,只装数据库软件
+oracle.install.option=INSTALL_DB_SWONLY
+# 35行 用户组
+UNIX_GROUP_NAME=oinstall
+# 42行 INVENTORY目录（不填就是默认值）
+INVENTORY_LOCATION=/var/oracle/oraInventory
+# 46行 oracle目录
+ORACLE_HOME=/usr/oracle/product/12.2.0/db_1
+# 51行 oracle基本目录
+ORACLE_BASE=/usr/oracle
+# 63行 oracle版本
+oracle.install.db.InstallEdition=EE
+# 80行
+oracle.install.db.OSDBA_GROUP=dba
+# 86行
+oracle.install.db.OSOPER_GROUP=dba
+# 91行 
+oracle.install.db.OSBACKUPDBA_GROUP=dba
+# 96行
+oracle.install.db.OSDGDBA_GROUP=dba
+# 101行
+oracle.install.db.OSKMDBA_GROUP=dba
+# 106行
+oracle.install.db.OSRACDBA_GROUP=dba
+# 180行 数据库类型
+oracle.install.db.config.starterdb.type=GENERAL_PURPOSE
+# 185行
+oracle.install.db.config.starterdb.globalDBName=orcl
+# 190行
+oracle.install.db.config.starterdb.SID=orcl
+# 216行
+oracle.install.db.config.starterdb.characterSet=AL32UTF8
+# 386行
+SECURITY_UPDATES_VIA_MYORACLESUPPORT=false
+# 398行 设置安全更新（貌似是有bug，这个一定要选true，否则会无限提醒邮件地址有问题，终止安装。PS：不管地址对不对）
+DECLINE_SECURITY_UPDATES=true
+
+2.安装Oracle
+# 切换oracle身份来安装数据库
+su - oracle
+cd /usr/oracle/database/
+./runInstaller -force -silent -noconfig -ignorePrereq -ignoreSysPreReqs -responseFile /usr/oracle/database/response/db_install.rsp
+
+安装过程中，如果提示[WARNING]不必理会，此时安装程序仍在进行，如果出现[FATAL]，则安装程序已经停止了。
+打开另一个终端，执行命令
+tailf /home/app/oracle/oraInventory/logs/installActions......log
+可以实时跟踪查看安装日志，了解安装的进度。
+当出现如下的字样，即可按照说明在另一个窗口中以root操作：
+以下配置脚本需要以 “root” 用户的身份执行
+As a root user, execute the following script(s):
+	1. /var/oracle/oraInventory/orainstRoot.sh
+	2. /usr/oracle/product/12.2.0/db_1/root.sh
+
+要执行配置脚本, 请执行以下操作:
+1. 打开一个终端窗口
+2. 以 “root” 身份登录
+3. 运行脚本
+4. 返回此窗口并按 “Enter” 键继续
+系统显示 Successfully Setup Software. 安装成功
+
+
+五、安装Oracle数据库实例
+1.安装Oracle数据库监听
+# 配置文件response/netca.rsp 不需要修改任何地方
+netca -silent -responsefile /usr/oracle/database/response/netca.rsp
+
+PS：路径一定要写绝对路径不然总是报错找不到配置文件
+Oracle Net Configuration Assistant 在给定位置找不到响应文件。
+Oracle Net Services 配置失败。退出代码是1
+
+完成后通过命令netstat -tlnp可以查看数据库监听端口已开成功打开，如下是打开了1539端口
+[root@VM-0-3-centos ~]# netstat -tlnp
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp6       0      0 :::1539                 :::*                    LISTEN      12640/tnslsnr
+
+# 修改数据库监听端口
+vi $ORACLE_HOME/network/admin/listener.ora
+将端口从1539改成1521，保存文件，重启监听
+lsnrctl stop
+lsnrctl start
+
+2.配置文件dbca.rsp文件静默建立新库
+# 21行 不可更改
+responseFileVersion=/oracle/assistants/rspfmt_dbca_response_schema_v12.2.0
+# 32行 全局数据库名
+gdbName=orcl
+# 42行 系统标识符
+sid=orcl
+# 52行
+databaseConfigType=SI
+# 74行
+policyManaged=false
+# 88行
+createServerPool=false
+# 127行
+force=false
+# 163行 createAsContainerDatabase设为true表示创建容器数据库；false为普通数据库
+createAsContainerDatabase=false
+# 172行
+numberOfPDBs=1
+# 182行
+pdbName=orclpdb
+# 192行
+useLocalUndoForPDBs=true
+# 203行 库密码
+pdbAdminPassword=********
+# 223行
+templateName=/usr/oracle/product/12.2.0/db_1/assistants/dbca/templates/General_Purpose.dbc
+# 233行 超级管理员密码
+sysPassword=********
+# 233行 管理员密码
+systemPassword=********
+# 273行
+emExpressPort=5500
+# 284行
+runCVUChecks=false
+# 313行
+omsPort=0
+# 341行
+dvConfiguration=false
+# 391行
+olsConfiguration=false
+# 401行
+datafileJarLocation={ORACLE_HOME}/assistants/dbca/templates/
+# 411行
+datafileDestination=/var/oracle/oradata/{DB_UNIQUE_NAME}/
+# 421行
+recoveryAreaDestination=/var/oracle/recovery/{DB_UNIQUE_NAME}
+# 431行
+storageType=FS
+# 468行 字符集创建库之后不可更改
+characterSet=AL32UTF8
+# 478行
+nationalCharacterSet=AL16UTF16
+# 488行
+registerWithDirService=false
+# 526行
+listeners=LISTENER
+# 546行
+variables=DB_UNIQUE_NAME=orcl,ORACLE_BASE=/usr/oracle,PDB_NAME=,DB_NAME=orcl,ORACLE_HOME=/usr/oracle/product/12.2.0.1/db_1,SID=orcl
+# 555行
+initParams=undo_tablespace=UNDOTBS1,memory_target=796MB,processes=300,db_recovery_file_dest_size=2780MB,nls_language=AMERICAN,dispatchers=(PROTOCOL=TCP) (SERVICE=orclXDB),db_recovery_file_dest=/var/oracle/recovery/{DB_UNIQUE_NAME},db_block_size=8192BYTES,diagnostic_dest={ORACLE_BASE},audit_file_dest={ORACLE_BASE}/admin/{DB_UNIQUE_NAME}/adump,nls_territory=AMERICA,local_listener=LISTENER_orcl,compatible=12.2.0,control_files=("/var/oracle/oradata/{DB_UNIQUE_NAME}/control01.ctl", "/var/oracle/recovery/{DB_UNIQUE_NAME}/control02.ctl"),db_name=cdb1,audit_trail=db,remote_login_passwordfile=EXCLUSIVE,open_cursors=300
+# 565行
+sampleSchema=false
+# 574行
+memoryPercentage=40
+# 584行
+databaseType=MULTIPURPOSE
+# 594行
+automaticMemoryManagement=false
+# 604行
+totalMemory=0
+
+
+3.安装Oracle数据库实例
+# 执行静默安装建立新库
+dbca -silent -createDatabase -responseFile /usr/oracle/database/response/dbca.rsp
+
+# 检查oracle进程状态
+ps -ef | grep ora_ | grep -v grep
+lsnrctl status
+
+
+4.开放防火墙端口相关
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+firewall-cmd --zone=public --add-port=8080/tcp --permanent
+firewall-cmd --zone=public --add-port=8081/tcp --permanent
+firewall-cmd --zone=public --add-port=3306/tcp --permanent
+firewall-cmd --zone=public --add-port=6379/tcp --permanent
+firewall-cmd --zone=public --add-port=1521/tcp --permanent
+systemctl restart firewalld.service
+firewall-cmd --list-port
+
+
+六、数据库实例的启动和关闭
+# 以 DBA 身份进入 sqlplus，查看数据库状态
+[oracle@Oracle ~]$ sqlplus / as sysdba
+SQL> select open_mode from v$database;             //查看数据库
+SQL> select status from v$instance;                //查看数据库实例
+ 
+# 以 DBA 身份进入 sqlplus，修改管理员用户密码
+[oracle@Oracle ~]$ sqlplus / as sysdba
+SQL> alter user sys identified by ********;        //改sys超级管理员密码
+SQL> alter user system identified by ********;     //改system管理员密码
+ 
+# 以 DBA 身份进入 sqlplus，启动数据库
+[oracle@Oracle ~]$ sqlplus / as sysdba
+SQL> startup
+ 
+# 以 DBA 身份进入 sqlplus，关闭数据库
+[oracle@Oracle ~]$ sqlplus / as sysdba
+SQL> shutdown abort
+或
+SQL> shutdown immediate
+
+
+七、开机自启动
+1.修改/etc/oratab文件以支持dbstart的方式启动
+vi /etc/oratab
+将值N改成Y，保存
+orcl:/usr/oracle/product/12.2.0/db_1:Y
+
+2.修改rc.local启动文件，在最后追加以下命令
+vi /etc/rc.d/rc.local
+
+# 添加oracle启动，和添加监听（先启动数据库，再启动监听）
+su - oracle -lc "/usr/oracle/product/12.2.0/db_1/bin/dbstart"
+su - oracle -lc "/usr/oracle/product/12.2.0/db_1/bin/lsnrctl start"
+# 准备JDK参数，并启动tomcat容器
+source /etc/profile
+sh /opt/apache-tomcat-8.5.57/bin/startup.sh
+
+
+# 给/etc/rc.d/rc.local文件追加执行权限，如有没有的话
+chmod +x /etc/rc.d/rc.local
+
+
+八、错误描述
+1.安装好Oracle数据库后: 执行 dbstart和dbshut会提示：
+[oracle@VM-0-3-centos ~]$ dbstart
+ORACLE_HOME_LISTNER is not SET, unable to auto-start Oracle Net Listener
+Usage: /usr/oracle/product/12.2.0/db_1/bin/dbstart ORACLE_HOME
+错误原因
+dbstart和dbshut脚本文件中ORACLE_HOME_LISTNER的设置有问题
+解决方法
+分别打开两个文件找到：ORACLE_HOME_LISTNER=$1,修改为
+ORACLE_HOME_LISTNER=$ORACLE_HOME
+
+2.无法启动oracle监听
+问题1：The listener supports no services
+问题2：Instance "orcl", status UNKNOWN, has 1 handler(s) for this service...
+
+# 使用oracle用户登陆，修改listener.ora文件，如下，保存
+vi $ORACLE_HOME/network/admin/listener.ora
+SID_LIST_LISTENER=
+  (SID_LIST=
+    (SID_DESC=
+      (GLOBAL_DBNAME= orcl)
+      (ORACLE_HOME=/usr/oracle/product/12.2.0/db_1)
+      (SID_NAME=orcl)
+    )
+  )
+LISTENER =
+  (DESCRIPTION_LIST =
+    (DESCRIPTION =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = VM-0-3-centos)(PORT = 1521))
+      (ADDRESS = (PROTOCOL = IPC)(KEY = EXTPROC1521))
+    )
+  )
+ADR_BASE_LISTENER = /usr
+
+# 注意：在/etc/rc.d/rc.local文件中一般先启动dbstart，再启动监听
+
+
+3.JDBC无法链接到数据库
+# 先检查用户是否被锁定（ORA-28000: the account is locked），如果被锁定，则请先解锁
+select * from dba_users u where u.USERNAME='BPM_ISSUE'; -- LOCKED(TIMED)
+alter user BPM_ISSUE account unlock;
+# 一般情况下，修改一次密码，防止初始化密码无法登陆
+alter user BPM_ISSUE identified by bpmATpass;
+
+# 无法链接到数据源池
+ORA-28040: No matching authentication protocol
+针对Oracle12C的方案如下：在Oracle用户（不是grid用户）下，
+将/usr/oracle/product/12.2.0/db_1/network/admin/sqlnet.ora文件原来的SQLNET.ALLOWED_LOGON_VERSION=8注释掉
+（如果没有sqlnet.ora文件，那么就创建一个），修改为如下的行，保存即可生效：
+SQLNET.ALLOWED_LOGON_VERSION_SERVER=8
+SQLNET.ALLOWED_LOGON_VERSION_CLIENT=8
+参考：https://blog.51cto.com/lhrbest/1885958
+
+# 其他的一些细节
+（1）注意oracle的驱动写法
+driverClassName="oracle.jdbc.OracleDriver"
+（2）注意引用oracle的驱动到tomcat/lib下
+（3）注意池链接配置文件的编码（utf-8）
+
+
+
+参考文章：
+https://blog.csdn.net/qq_33276578/article/details/86679584
+https://blog.csdn.net/haopeng7816/article/details/83956623
+https://www.cnblogs.com/storymedia/p/4911190.html

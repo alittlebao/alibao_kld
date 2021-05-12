@@ -1,0 +1,146 @@
+﻿2020-03-31 12:47:15,924 205 219 ERROR Database.Connection open db fail! 14 path: profiles\\system\gconf.db
+2020-03-31 12:47:15,924 205 219 ERROR Database.ConnectionManager CConnectionManager::CreateConnectionImpl connect error 0x80040500! profiles\\system\gconf.db
+2020-03-31 12:47:16,500 205 219 ERROR CTaskScheduler No Tasks are currently running
+2020-03-31 12:47:16,501 205 219 ERROR CTaskScheduler error GetInstalledTask return NULL hr=80070002
+2020-03-31 12:47:16,501 205 219 WARN CTaskScheduler IsInstalled 2
+2020-03-31 12:47:16,501 205 219 ERROR CTaskScheduler error GetInstalledTask return NULL hr=80070002
+2020-03-31 12:47:16,502 205 219 ERROR CTaskScheduler CTaskScheduler status spTask == NULL 
+2020-03-31 12:47:16,502 205 219 WARN AliWWApplication taskScheduler res api2 3 api1 2 needinstall2 1, needinstall1 1, bIsInstallByapi1 0
+2020-03-31 12:47:16,502 205 219 WARN AliWWApplication taskScheduler uninstall
+2020-03-31 12:47:16,505 205 219 ERROR CTaskScheduler error GetInstalledTask return NULL hr=80070002
+2020-03-31 12:47:16,506 205 219 WARN CTaskScheduler IsInstalled 2
+2020-03-31 12:47:16,506 205 219 WARN CTaskScheduler  InternalUninstallTask get ITaskScheduler
+2020-03-31 12:47:16,506 205 219 ERROR CTaskScheduler error GetInstalledTask return NULL hr=80070002
+2020-03-31 12:47:16,688 205 219 ERROR UIFrameMgr imsdk init: 63ms
+2020-03-31 12:47:16,716 205 219 WARN WWApp.QNLoginViewBiz CQNLoginViewBiz::Go2QNLoginInitPage
+2020-03-31 12:47:16,716 205 219 WARN AppBiz.AppAuthDelegate AppAuthDelegate startup
+2020-03-31 12:47:16,727 205 219 WARN GetHardSoftInfo nt window
+2020-03-31 12:47:16,728 205 219 WARN GetHardSoftInfo Get disk serial is not done
+2020-03-31 12:47:16,736 205 219 WARN GetHardSoftInfo DiskSerial: d41d8cd98f00b204e9800998ecf8427e
+2020-03-31 12:47:16,736 205 219 WARN GetHardSoftInfo DiskLabelInfo: 
+2020-03-31 12:47:16,763 205 219 ERROR Database.Connection open db fail! 14 path: profiles\\system\gconf.db
+2020-03-31 12:47:16,764 205 219 ERROR Database.ConnectionManager CConnectionManager::CreateConnectionImpl connect error 0x80040500! profiles\\system\gconf.db
+2020-03-31 12:47:17,198 254 289 ERROR CTaskScheduler CoInitializeEx failed: 80010106
+2020-03-31 12:47:17,209 254 289 ERROR CTaskScheduler principal  80004001
+2020-03-31 12:47:17,210 254 289 WARN CTaskScheduler get ITaskScheduler
+2020-03-31 12:47:17,210 254 289 ERROR CTaskScheduler error GetInstalledTask return NULL hr=80070002
+2020-03-31 12:47:17,211 254 289 WARN CTaskScheduler SetApplicationName
+2020-03-31 12:47:17,413 205 219 WARN QNSystemTray Add TrayIcon Success on 1 Retry
+2020-03-31 12:47:48,609 205 219 WARN AppBiz.AppAuthDelegate UICAuthSDK account auth ok, hid: 879167550, user: revally27, loginid: revally27
+2020-03-31 12:47:49,077 205 219 WARN AppBiz.AppAuthDelegate UICAuthSDK account SsoToken Ok
+2020-03-31 12:47:49,078 205 219 WARN AppBiz.ShopLoginBiz LoginQN, site: cntaobao, nick: revally27
+2020-03-31 12:47:49,082 205 219 ERROR Recovery.RecoveryEngine CRecoveryEngine::InitRecoveryData strUID is cntaobaorevally27 ,  FromXmlFile all exception.
+2020-03-31 12:47:49,083 205 219 ERROR Recovery.RecoveryEngine CRecoveryEngine::InitRecoveryData strUID is cntaobaorevally27 ,  FromXmlFile crash exception.
+2020-03-31 12:47:49,084 205 219 WARN Recovery.RecoveryEngine CRecoveryEngine::InitRecoveryData strUID is cntaobaorevally27 ,    recover List is: 
+ <xparam/>
+
+2020-03-31 12:47:49,322 205 219 WARN CAccountMgr GetLoginQNAccount empty From  ErrorTrace2Server@ErrorTraceUtil.cpp:38
+2020-03-31 12:47:49,323 205 219 WARN AppBiz.ShopLoginBiz OnQNLoginError
+2020-03-31 12:47:49,391 205 219 WARN WWApp.QNLoginViewBiz CQNLoginViewBiz::OnQNLoginError errorcode: -104, subcode: clientVersion:6.06.02N, bShowError: 0
+2020-03-31 12:47:49,392 205 219 ERROR CQNUpdateBiz aliupdate.dll 加载失败
+2020-03-31 12:47:49,429 205 219 ERROR CUIUpdateWindow 升级策略导致失败
+2020-03-31 12:47:53,379 205 219 WARN CAccountMgr GetLoginQNAccount empty From  CQNUpdateBiz::GetLoginNick@AppGlobalBiz\QNUpdate\QNUpdateBiz.cpp:544
+2020-03-31 12:47:53,379 205 219 WARN CQNUpdateBiz 强制升级启动
+2020-03-31 12:47:53,402 205 219 ERROR CUIUpdateWidget 升级比例高于100
+2020-03-31 12:47:53,402 205 219 ERROR CUIUpdateWidget 当前页面状态不对 7
+2020-03-31 12:47:54,402 205 219 ERROR CQNUpdateBiz 获取状态 error: [3]
+2020-03-31 12:48:03,403 205 219 ERROR CQNUpdateBiz 获取状态 error: [3]
+2020-03-31 12:48:12,405 205 219 ERROR CQNUpdateBiz 获取状态 error: [3]
+2020-03-31 12:48:21,407 205 219 ERROR CQNUpdateBiz 获取状态 error: [3]
+2020-03-31 12:48:23,688 205 219 WARN CAccountMgr GetLoginQNAccount empty From  CUIFrameMgr::PreCloseAllWindows@AppGlobalUI\UIFrame\UIFrameMgr.cpp:724
+2020-03-31 12:48:23,697 205 219 WARN UIFrameMgr CUIFrameMgr::OnLogouted
+2020-03-31 12:48:23,698 205 219 WARN UIFrameMgr AMP biz uninit OK
+2020-03-31 12:48:23,699 205 219 WARN WWApp.TimerReLogin TimerReLogin Cancel
+2020-03-31 12:48:23,700 205 219 WARN WWApp.QNLoginViewBiz CQNLoginViewBiz::OnExitReqqnStatus: 0, wwStatus: 0
+2020-03-31 12:48:23,700 205 219 WARN WWApp.TimerReLogin TimerReLogin Cancel
+2020-03-31 12:48:23,700 205 219 WARN WWApp.QNLoginViewBiz CQNLoginViewBiz::OnExitReqqnStatus: 0, wwStatus: 0
+2020-03-31 12:48:23,701 205 219 WARN UIFrameMgr QN biz uninit OK
+2020-03-31 12:48:23,704 205 219 WARN UIFrameMgr IM biz uninit OK
+2020-03-31 12:48:23,704 205 219 WARN UIFrameMgr m_spMainframeObject stop OK
+2020-03-31 12:48:23,704 205 219 WARN UIFrameMgr m_spQNLoginViewBiz stop OK
+2020-03-31 12:48:23,705 205 219 WARN UIFrameMgr RemoveGUIResTempPath OK
+2020-03-31 12:48:23,705 205 219 WARN UIFrameMgr PostQuitMessage OK
+2020-03-31 16:53:27,110 8 124 ERROR Database.Connection open db fail! 14 path: profiles\\system\gconf.db
+2020-03-31 16:53:27,111 8 124 ERROR Database.ConnectionManager CConnectionManager::CreateConnectionImpl connect error 0x80040500! profiles\\system\gconf.db
+2020-03-31 16:53:27,646 8 124 ERROR UIFrameMgr imsdk init: 64ms
+2020-03-31 16:53:27,666 8 124 WARN WWApp.QNLoginViewBiz CQNLoginViewBiz::Go2QNLoginInitPage
+2020-03-31 16:53:27,666 8 124 WARN AppBiz.AppAuthDelegate AppAuthDelegate startup
+2020-03-31 16:53:27,678 8 124 WARN GetHardSoftInfo nt window
+2020-03-31 16:53:27,678 8 124 WARN GetHardSoftInfo Get disk serial is not done
+2020-03-31 16:53:27,684 8 124 WARN GetHardSoftInfo DiskSerial: d41d8cd98f00b204e9800998ecf8427e
+2020-03-31 16:53:27,684 8 124 WARN GetHardSoftInfo DiskLabelInfo: 
+2020-03-31 16:53:28,328 8 124 WARN QNSystemTray Add TrayIcon Success on 1 Retry
+2020-03-31 16:53:28,712 8 124 ERROR CTaskScheduler No Tasks are currently running
+2020-03-31 16:53:28,713 8 124 ERROR CTaskScheduler error GetInstalledTask return NULL hr=80070002
+2020-03-31 16:53:28,713 8 124 WARN CTaskScheduler IsInstalled 2
+2020-03-31 16:53:28,714 8 124 ERROR CTaskScheduler error GetInstalledTask return NULL hr=80070002
+2020-03-31 16:53:28,714 8 124 ERROR CTaskScheduler CTaskScheduler status spTask == NULL 
+2020-03-31 16:53:28,714 8 124 WARN AliWWApplication taskScheduler res api2 3 api1 2 needinstall2 1, needinstall1 1, bIsInstallByapi1 0
+2020-03-31 16:53:28,714 8 124 WARN AliWWApplication taskScheduler uninstall
+2020-03-31 16:53:28,714 8 124 ERROR CTaskScheduler error GetInstalledTask return NULL hr=80070002
+2020-03-31 16:53:28,716 8 124 WARN CTaskScheduler IsInstalled 2
+2020-03-31 16:53:28,716 8 124 WARN CTaskScheduler  InternalUninstallTask get ITaskScheduler
+2020-03-31 16:53:28,716 8 124 ERROR CTaskScheduler error GetInstalledTask return NULL hr=80070002
+2020-03-31 16:53:29,035 207 215 ERROR CTaskScheduler CoInitializeEx failed: 80010106
+2020-03-31 16:53:29,039 207 215 ERROR CTaskScheduler principal  80004001
+2020-03-31 16:53:29,039 207 215 WARN CTaskScheduler get ITaskScheduler
+2020-03-31 16:53:29,039 207 215 ERROR CTaskScheduler error GetInstalledTask return NULL hr=80070002
+2020-03-31 16:53:29,039 207 215 WARN CTaskScheduler SetApplicationName
+2020-03-31 16:53:30,089 8 124 WARN AppBiz.AppAuthDelegate UICAuthSDK account auth ok, hid: 879167550, user: revally27, loginid: revally27
+2020-03-31 16:53:30,782 8 124 WARN AppBiz.AppAuthDelegate UICAuthSDK account SsoToken Ok
+2020-03-31 16:53:30,801 8 124 WARN AppBiz.ShopLoginBiz LoginQN, site: cntaobao, nick: revally27
+2020-03-31 16:53:30,803 8 124 ERROR Recovery.RecoveryEngine CRecoveryEngine::InitRecoveryData strUID is cntaobaorevally27 ,  FromXmlFile all exception.
+2020-03-31 16:53:30,803 8 124 ERROR Recovery.RecoveryEngine CRecoveryEngine::InitRecoveryData strUID is cntaobaorevally27 ,  FromXmlFile crash exception.
+2020-03-31 16:53:30,824 8 124 WARN Recovery.RecoveryEngine CRecoveryEngine::InitRecoveryData strUID is cntaobaorevally27 ,    recover List is: 
+ <xparam/>
+
+2020-03-31 16:53:31,093 8 124 WARN CAccountMgr GetLoginQNAccount empty From  ErrorTrace2Server@ErrorTraceUtil.cpp:38
+2020-03-31 16:53:31,093 8 124 WARN AppBiz.ShopLoginBiz OnQNLoginError
+2020-03-31 16:53:31,129 8 124 WARN WWApp.QNLoginViewBiz CQNLoginViewBiz::OnQNLoginError errorcode: -104, subcode: clientVersion:6.06.02N, bShowError: 0
+2020-03-31 16:53:31,129 8 124 ERROR CQNUpdateBiz aliupdate.dll 加载失败
+2020-03-31 16:53:31,150 8 124 ERROR CUIUpdateWindow 升级策略导致失败
+2020-03-31 16:53:32,768 8 124 WARN CAccountMgr GetLoginQNAccount empty From  CQNUpdateBiz::GetLoginNick@AppGlobalBiz\QNUpdate\QNUpdateBiz.cpp:544
+2020-03-31 16:53:32,768 8 124 WARN CQNUpdateBiz 强制升级启动
+2020-03-31 16:53:32,780 8 124 ERROR CUIUpdateWidget 升级比例高于100
+2020-03-31 16:53:32,781 8 124 ERROR CUIUpdateWidget 当前页面状态不对 7
+2020-03-31 16:53:33,781 8 124 ERROR CQNUpdateBiz 获取状态 error: [3]
+2020-03-31 16:53:42,782 8 124 ERROR CQNUpdateBiz 获取状态 error: [3]
+2020-03-31 16:53:51,784 8 124 ERROR CQNUpdateBiz 获取状态 error: [3]
+2020-03-31 16:54:00,786 8 124 ERROR CQNUpdateBiz 获取状态 error: [3]
+2020-03-31 16:54:05,787 8 124 ERROR CQNUpdateBiz 定时检查升级模块状态 超时 error: [3]
+2020-03-31 16:54:06,788 8 124 ERROR CQNUpdateBiz 异常状态导致失败
+2020-03-31 16:54:06,788 8 124 ERROR CUIUpdateWindow 错误结束状态
+2020-03-31 16:54:45,841 8 124 WARN CAccountMgr GetLoginQNAccount empty From  CQNUpdateBiz::GetLoginNick@AppGlobalBiz\QNUpdate\QNUpdateBiz.cpp:544
+2020-03-31 16:54:45,841 8 124 WARN CAccountMgr GetLoginQNAccount empty From  CQNUpdateBiz::GetLoginNumId@AppGlobalBiz\QNUpdate\QNUpdateBiz.cpp:791
+2020-03-31 16:54:45,841 8 124 ERROR CQNUpdateBiz aliupdate.dll 加载失败
+2020-03-31 16:54:45,844 8 124 ERROR CUIUpdateWindow 升级策略导致失败
+2020-03-31 16:54:45,851 8 124 WARN CAccountMgr GetLoginQNAccount empty From  CQNUpdateBiz::GetLoginNick@AppGlobalBiz\QNUpdate\QNUpdateBiz.cpp:544
+2020-03-31 16:54:45,852 8 124 WARN CAccountMgr GetLoginQNAccount empty From  CQNUpdateBiz::GetLoginNumId@AppGlobalBiz\QNUpdate\QNUpdateBiz.cpp:791
+2020-03-31 16:54:45,852 8 124 ERROR CQNUpdateBiz aliupdate.dll 加载失败
+2020-03-31 16:54:45,855 8 124 ERROR CUIUpdateWindow 升级策略导致失败
+2020-03-31 16:55:11,273 8 124 WARN AppBiz.AppAuthDelegate UICAuthSDK account auth ok, hid: 879167550, user: revally27, loginid: revally27
+2020-03-31 16:55:11,812 8 124 WARN AppBiz.AppAuthDelegate UICAuthSDK account SsoToken Ok
+2020-03-31 16:55:11,812 8 124 WARN AppBiz.ShopLoginBiz LoginQN, site: cntaobao, nick: revally27
+2020-03-31 16:55:11,813 8 124 ERROR Recovery.RecoveryEngine CRecoveryEngine::InitRecoveryData strUID is cntaobaorevally27 ,  FromXmlFile all exception.
+2020-03-31 16:55:11,813 8 124 ERROR Recovery.RecoveryEngine CRecoveryEngine::InitRecoveryData strUID is cntaobaorevally27 ,  FromXmlFile crash exception.
+2020-03-31 16:55:11,814 8 124 WARN Recovery.RecoveryEngine CRecoveryEngine::InitRecoveryData strUID is cntaobaorevally27 ,    recover List is: 
+ <xparam/>
+
+2020-03-31 16:55:12,026 8 124 WARN CAccountMgr GetLoginQNAccount empty From  ErrorTrace2Server@ErrorTraceUtil.cpp:38
+2020-03-31 16:55:12,026 8 124 WARN AppBiz.ShopLoginBiz OnQNLoginError
+2020-03-31 16:55:12,060 8 124 WARN WWApp.QNLoginViewBiz CQNLoginViewBiz::OnQNLoginError errorcode: -104, subcode: clientVersion:6.06.02N, bShowError: 0
+2020-03-31 16:55:12,060 8 124 ERROR CQNUpdateBiz aliupdate.dll 加载失败
+2020-03-31 16:55:12,079 8 124 ERROR CUIUpdateWindow 升级策略导致失败
+2020-03-31 16:55:19,536 8 124 WARN CAccountMgr GetLoginQNAccount empty From  CUIFrameMgr::PreCloseAllWindows@AppGlobalUI\UIFrame\UIFrameMgr.cpp:724
+2020-03-31 16:55:19,543 8 124 WARN UIFrameMgr CUIFrameMgr::OnLogouted
+2020-03-31 16:55:19,544 8 124 WARN UIFrameMgr AMP biz uninit OK
+2020-03-31 16:55:19,556 8 124 WARN WWApp.TimerReLogin TimerReLogin Cancel
+2020-03-31 16:55:19,556 8 124 WARN WWApp.QNLoginViewBiz CQNLoginViewBiz::OnExitReqqnStatus: 0, wwStatus: 0
+2020-03-31 16:55:19,567 8 124 WARN WWApp.TimerReLogin TimerReLogin Cancel
+2020-03-31 16:55:19,567 8 124 WARN WWApp.QNLoginViewBiz CQNLoginViewBiz::OnExitReqqnStatus: 0, wwStatus: 0
+2020-03-31 16:55:19,567 8 124 WARN UIFrameMgr QN biz uninit OK
+2020-03-31 16:55:19,574 8 124 WARN UIFrameMgr IM biz uninit OK
+2020-03-31 16:55:19,574 8 124 WARN UIFrameMgr m_spMainframeObject stop OK
+2020-03-31 16:55:19,574 8 124 WARN UIFrameMgr m_spQNLoginViewBiz stop OK
+2020-03-31 16:55:19,575 8 124 WARN UIFrameMgr RemoveGUIResTempPath OK
+2020-03-31 16:55:19,575 8 124 WARN UIFrameMgr PostQuitMessage OK

@@ -1,0 +1,60 @@
+Linux 的软件安装目录也应该是有讲究的，遵循这一点，对后期的管理和维护也是有帮助的。
+/usr 系统级的目录，可以理解为 C:/Windows/ ， /usr/lib 可理解为 C:/Windows/System32 。
+/usr/local 用户级的程序目录，可以理解为 C:/Progrem Files/ 。用户自己编译的软件默认会安装到这个目录下。
+/opt 用户级的程序目录，可以理解为 D:/Software ， opt 有可选的意思，这里可以用于放置第三方大型软件（或游戏），当你不需要时，直接 rm -rf 掉即可。
+
+#解压指定路径
+解压：tar -zxf FileName.tar.gz –C /temp/ 解压至指定路径
+
+
+#ubuntu
+===============================================
+#查看端口占用
+ lsof -i
+ lsof -i:{端口号}
+#查看80端口使用情况
+ netstat -an | grep 80
+
+
+# 查看进程文件位置 PID为对应进程号
+ll /proc/PID
+
+
+# crontab命令选项基本只有对用户操作的选项:
+-u 指定一个用户
+-l 列出某个用户的任务计划
+-r 删除某个用户的任务
+-e 编辑某个用户的任务
+crontab -l
+重启：service crond restart
+
+
+#centos
+===============================================
+#关机
+ shutdown -h now
+#重启
+ reboot
+
+
+#查看IP地址
+ ifconfig -a
+
+#查看连接失败次数
+cat /var/log/secure | awk '/Failed/{print $(NF-3)}' | sort | uniq -c | awk '{print $2" = "$1;}'
+
+#查看连接成功次数
+cat /var/log/secure | awk '/Accepted/{print $(NF-3)}' | sort | uniq -c | awk '{print $2" = "$1;}'
+
+
+#挂后台跑程序：
+ nohup sh prc_run.sh(文件名)  &
+#查看运行程序：
+ ps -ef|grep prc（程序名）
+#杀死某个进程
+ kill -9 进程号（PID） 或  killall -9 NAME
+#查看tomcat日志
+ tail -f /opt/apache-tomcat-7.0.88/logs/catalina.out
+
+
+

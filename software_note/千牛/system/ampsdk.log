@@ -1,0 +1,8 @@
+[03-31 12:47:16 254651936 205 206 WARNING] ampsdk AMPStorageMgr.cpp(22) CAMPStorageMgr::Init, 
+[03-31 12:47:16 254651937 205 206 WARNING] ampsdk AMPBizMgr.cpp(56) CAMPBizMgr::Init, Biz Init
+[03-31 12:48:23 254719051 205 206 WARNING] ampsdk AMPBizMgr.cpp(63) CAMPBizMgr::Uninit, Biz Uninit
+[03-31 12:48:23 254719051 205 206 WARNING] ampsdk AMPStorageMgr.cpp(36) CAMPStorageMgr::UnInit, 
+[03-31 16:53:27 1062092 8 9 WARNING] ampsdk AMPStorageMgr.cpp(22) CAMPStorageMgr::Init, 
+[03-31 16:53:27 1062093 8 9 WARNING] ampsdk AMPBizMgr.cpp(56) CAMPBizMgr::Init, Biz Init
+[03-31 16:55:19 1174098 8 9 WARNING] ampsdk AMPBizMgr.cpp(63) CAMPBizMgr::Uninit, Biz Uninit
+[03-31 16:55:19 1174098 8 9 WARNING] ampsdk AMPStorageMgr.cpp(36) CAMPStorageMgr::UnInit, 
